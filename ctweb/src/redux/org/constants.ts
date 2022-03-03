@@ -1,0 +1,1 @@
+export const STORE_PARTIAL_ORG = "STORE_PARTIAL_ORG";
