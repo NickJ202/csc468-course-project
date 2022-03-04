@@ -1,3 +1,6 @@
+centrigo/*
+data
+*.sqlite3
 # Logs
 logs
 *.log
@@ -114,8 +117,7 @@ dist
 /coverage
 
 # production
-/build
-
+/bui
 # misc
 .DS_Store
 .env.local
@@ -142,7 +144,7 @@ yarn-error.log*
 *.pot
 *.pyc
 __pycache__
-db.sqlite3
+3
 media
 
 # Backup files # 
