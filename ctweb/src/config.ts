@@ -10,7 +10,9 @@ import { EventsCreate3 } from "./views/events/create/eventsCreate3";
 import { language } from "./language";
 import * as U from "./urls";
 
-// const API_URI = process.env.REACT_APP_API_URI;
+const API_URI = process.env.REACT_APP_API_URI;
+
+export const ORG_ENDPOINT = API_URI + "org/register/";
 const AUTH_URI = process.env.REACT_APP_AUTH_URI;
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'oauth2_provider',
     'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,9 @@ LOGIN_URL='/admin/login/'
 LOGIN_REDIRECT_URL = "dashboard"
 
 LOGOUT_REDIRECT_URL = "dashboard"
+
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = (
+    "http://localhost:3000/"
+)

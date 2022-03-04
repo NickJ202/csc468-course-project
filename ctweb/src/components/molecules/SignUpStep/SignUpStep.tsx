@@ -8,7 +8,7 @@ import { FormField } from "../../atoms/FormField";
 
 import { storePartialOrg } from "../../../redux/org/actions";
 
-import { IProps } from "./types";
+import { IProps, IFields } from "./types";
 import * as S from "./styles";
 
 import { RootState } from "../../../redux/store";
@@ -20,7 +20,7 @@ export default function SignUpStep(props: IProps) {
 
     React.useEffect(() => {
         if (!formState) {
-            let fields: any = {};
+            let fields: IFields = {};
             for (const field of props.fields) {
                 fields[field.name] = {
                     value: orgData[field.name],

@@ -6,5 +6,14 @@ export interface IProps {
     fields: FormFieldType[];
     submitBtnLabel: string;
     handleSubmit: (formState: any) => void;
-    children?: React.ReactNode;
+    children: React.ReactNode;
+}
+
+interface IValue {
+    value: string | number | null;
+    invalid: boolean;
+}
+
+export interface IFields {
+    [name: string]: IValue;
 }

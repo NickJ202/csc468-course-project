@@ -20,7 +20,7 @@ export const Link = styled.a<IStyleProps>`
   margin-right: 10px;
   font-size: inherit;
   font-weight: ${props => props.active ? 
-          'inherit' : props.theme.typography.regularFontWeight};
+          "inherit" : props.theme.typography.regularFontWeight};
   color: ${props => props.active ?
           props.theme.colors.font.secondary : props.theme.colors.font.primary};
   pointer-events: ${props => props.disabled ? "none" : "all"};
