@@ -11,10 +11,11 @@ from iam import http_response as http
 
 class OrgRegisterView(APIView):
     def get(self, request):
-        return http.success("GET")
+        return http.success("GET - prob will use this to fetch org by id")
 
     def post(self, request):
-        return http.success(request.data)
+        print("Register Org: " + request.data['name'])
+        return http.success()
 
 
 def dashboard(request):

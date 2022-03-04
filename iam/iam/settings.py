@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
+
 ]
 
 ROOT_URLCONF = 'iam.urls'
@@ -136,6 +138,6 @@ LOGOUT_REDIRECT_URL = "dashboard"
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = (
-    "http://localhost:3000/"
-)
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
