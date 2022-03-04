@@ -1,0 +1,15 @@
+export const base = "/";
+export const active = ":active";
+export const account = `${base}account/`;
+export const accountActive = account + active;
+export const events = `${base}events/`;
+export const eventsCreate = `${events}create/`;
+export const eventsCreate1 = `${eventsCreate}1/`;
+export const eventsCreate2 = `${eventsCreate}2/`;
+export const eventsCreate3 = `${eventsCreate}3/`;
+export const eventsCreateSummary = `${eventsCreate}summary/`;
+export const eventsCreateConfirmation = `${eventsCreate}confirmation/`;
+export const signUp = `${base}signup/`;
+export const signUpOrganization = `${signUp}organization/`;
+export const signUpContact = `${signUp}contact/`;
+export const signUpBilling = `${signUp}billing/`;
