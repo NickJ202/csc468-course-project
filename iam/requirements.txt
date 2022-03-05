@@ -4,7 +4,6 @@ django-oauth-toolkit==1.7.0
 django-cors-headers==3.11.0
 djangorestframework~=3.13.1
 asgiref==3.5.0
-backports.zoneinfo==0.2.1
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.12
