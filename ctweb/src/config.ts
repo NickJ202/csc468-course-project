@@ -1,4 +1,4 @@
-import { IURLView, ISignUpCollection } from "./types";
+import { IURLView, ISignUpCollection, ICreateCollection } from "./types";
 
 import { Billing } from "./views/account/billing";
 import { Users } from "./views/account/users";
@@ -60,5 +60,23 @@ export const SIGNUP: ISignUpCollection = {
             { name: "phoneNumber", label: language.signUp.contact.fields.phoneNumber },
             { name: "identifier", label: language.signUp.contact.fields.identifier },
         ]
-    }
+    },
+};
+
+export const CREATE: ICreateCollection = {
+    basicInfo: {
+        fields: [
+            { name: "title", label: language.basicInfo.eventTitle },
+            { name: "description", label: language.basicInfo.description }
+        ]
+    },
+    address: {
+        fields: [
+            { name: "address1", label: language.signUp.org.fields.address },
+            { name: "locality", label: language.signUp.org.fields.city },
+            { name: "administrativeArea", label: language.signUp.org.fields.state },
+            { name: "postalCode", label: language.signUp.org.fields.postalCode },
+            { name: "country", label: language.signUp.org.fields.country }
+        ]
+    },
 };

@@ -26,6 +26,11 @@ export const language: ILanguage = {
         title: "Events",
         createFirst: "Create your first event"
     },
+    basicInfo: {
+        header: "Basic Information",
+        eventTitle: "Title of Event",
+        description: "Decription"
+    },
     logOut: "Log out",
     org: "Organization",
     profileImage: {
