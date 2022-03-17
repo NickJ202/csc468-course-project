@@ -24,6 +24,11 @@ export interface ILanguage {
         title: string;
         createFirst: string;
     },
+    basicInfo: {
+        header: string;
+        eventTitle: string;
+        description: string;
+    }
     logOut: string;
     org: string;
     profileImage: {

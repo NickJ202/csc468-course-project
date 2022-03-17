@@ -24,6 +24,15 @@ export interface ISignUpCollection {
     }
 }
 
+export interface ICreateCollection {
+    basicInfo: {
+        fields: FormFieldType[]
+    },
+    address: {
+        fields: FormFieldType[]
+    },
+}
+
 export type ButtonType = "primary" | "secondary";
 
 export type URLViewType = {
