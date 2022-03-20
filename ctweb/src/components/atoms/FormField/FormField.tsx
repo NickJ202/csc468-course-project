@@ -10,6 +10,7 @@ export default function FormField(props: IProps) {
                 onChange={props.onChange}
                 disabled={false}
                 invalid={false}
+                placeholder={props.placeholder ? props.placeholder : ""}
             />
         </S.Wrapper>
     );

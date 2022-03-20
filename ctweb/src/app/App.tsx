@@ -26,7 +26,7 @@ export default function App() {
             {/*    !authenticated &&*/}
             {/*    <S.ViewWrapper/>*/}
             {/*}*/}
-            <Root authenticated={false}/>
+            <Root authenticated={true}/>
         </>
     );
 }

@@ -1,14 +1,14 @@
-import React from "react";
-import {useHistory} from "react-router-dom";
+import { EventsCreate1 } from "../../../components/organisms/EventsCreate1";
+import { EventsCreateStep } from "../../../components/organisms/EventsCreateStep";
 
 import * as U from "../../../urls";
 
 export default function EventsCreateView() {
-    const history = useHistory();
-
-    React.useEffect(() => {
-        history.push(U.eventsCreate1);
-    }, [history])
-
-    return null;
+    return (
+        <EventsCreateStep
+            continueUrl={U.eventsCreateSummary}
+        >
+            <EventsCreate1 />
+        </EventsCreateStep>
+    );
 }

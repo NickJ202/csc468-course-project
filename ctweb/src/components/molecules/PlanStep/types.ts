@@ -1,9 +1,7 @@
-import React from "react";
 import {FormFieldType} from "../../../types";
 
 export interface IProps {
     title: string;
     fields: FormFieldType[];
     //handleSubmit: (formState: any) => void;
-    children?: React.ReactNode;
 }

@@ -1,5 +1,7 @@
 import {ILanguage} from "./language.i";
 
+const dateFormatter = "MM / DD / YYYY";
+
 export const language: ILanguage = {
     account: {
         title: "Account",
@@ -30,6 +32,12 @@ export const language: ILanguage = {
         header: "Basic Information",
         eventTitle: "Title of Event",
         description: "Decription"
+    },
+    timeFrame: {
+        header: "Timeframe",
+        startDate: "Start Date",
+        endDate: "End Date",
+        dateFormatter: dateFormatter
     },
     logOut: "Log out",
     org: "Organization",

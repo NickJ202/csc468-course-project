@@ -11,7 +11,7 @@ export default function EventsView(props: IViewProps) {
     const history = useHistory();
 
     function handleRedirectCreate() {
-        history.push(U.eventsCreate1);
+        history.push(U.eventsCreate);
     }
 
     return (

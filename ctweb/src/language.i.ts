@@ -28,7 +28,13 @@ export interface ILanguage {
         header: string;
         eventTitle: string;
         description: string;
-    }
+    },
+    timeFrame: {
+        header: string,
+        startDate: string,
+        endDate: string,
+        dateFormatter: string
+    },
     logOut: string;
     org: string;
     profileImage: {
