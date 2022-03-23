@@ -5,3 +5,12 @@ export interface IProps {
     fields: FormFieldType[];
     //handleSubmit: (formState: any) => void;
 }
+
+interface IValue {
+    value: string | number | null;
+    invalid: boolean;
+}
+
+export interface IFields {
+    [name: string]: IValue;
+}

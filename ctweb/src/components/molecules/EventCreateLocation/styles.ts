@@ -7,6 +7,18 @@ export const Wrapper = styled.div`
     width: 100%;
 `;
 
+export const Table = styled.table`
+    display: flex;
+    border-collapse: collapse;
+    min-width: 100%;
+`;
+
+export const Column = styled.div`
+    float: left;
+    width: 50%;
+    padding: 10px;    
+`;
+
 export const FlexContainer = styled.div`
     display: flex;
     margin-top: 20px;
@@ -27,19 +39,6 @@ export const CalendarContainer = styled.div`
     @media(max-width: ${SC.STYLING.cutoffSecondary}) {
         width: 100%;
     }
-`;
-
-export const Button = styled.button`
-    border: none;
-    height: px;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    line-height: 5px;
-    font-size: 12px;
-    margin: 10px 12px;
-    cursor: pointer;
-    background-color: #40b882;    
 `;
 
 export const Calendar = styled.div`

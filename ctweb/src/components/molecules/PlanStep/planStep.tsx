@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //import logo from "../../../assets/logo-title-primary.png";
 
@@ -8,20 +8,44 @@ import { TextArea } from "../../atoms/TextArea";
 import { SectionTitle } from "../../atoms/SectionTitle";
 
 import * as S from "./styles";
+import * as CF from "../../../config";
 
-import { IProps } from "./types";
+import { IProps, IFields } from "./types";
 import { language } from '../../../language';
 
 export default function PlanStep(props: IProps) {
-    // const dispatch = useDispatch();
+    const propFields = CF.CREATE.basicInfo.fields;
+    const [title, setTitle] = React.useState<string>("");
+    const [description, setDescription] = React.useState<string>("");
 
-    function handleTextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-        console.log(e.target.value);
-    }
+    // useEffect(() => {
+    //     if (!formState) {
+    //         let fields: IFields = {};
+    //             for (const field of propFields) {
+    //                 fields[field.name] = {
+    //                     value: "",
+    //                     invalid: false
+    //                 }
+    //             }
+    //             console.log(fields);
+    //             setFormState(fields);
+    //             console.log(formState);
+    //         }
+    //     });
 
-    function handleFieldChange(e: React.ChangeEvent<HTMLInputElement>) {
-        console.log(e.target.value);
-    }
+    // function handleTextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    //     let fields = { ...formState };
+    //     fields["description"].value = e.target.value;
+    //     setFormState(fields);
+    //     console.log(formState);
+    // }
+
+    // function handleFieldChange(e: React.ChangeEvent<HTMLInputElement>) {
+    //     let fields = { ...formState };
+    //     fields["title"].value = e.target.value;
+    //     setFormState(fields);
+    //     console.log(formState);
+    // }
 
     // function handleSubmit(e: React.SyntheticEvent) {
     //     e.preventDefault();
@@ -34,14 +58,14 @@ export default function PlanStep(props: IProps) {
             <S.FlexContainer>
                 <FormField
                     label={language.basicInfo.eventTitle}
-                    value={""}
-                    onChange={(e: any) => handleFieldChange(e)}
+                    value={title}
+                    onChange={(e: any) => setTitle(e.target.value)}
                 />
 
                 <TextArea
                     label={language.basicInfo.description}
-                    value={""}
-                    onChange={(e: any) => handleTextChange(e)}
+                    value={description}
+                    onChange={(e: any) => setDescription(e.target.value)}
                 />
             </S.FlexContainer>
         </S.Wrapper>
