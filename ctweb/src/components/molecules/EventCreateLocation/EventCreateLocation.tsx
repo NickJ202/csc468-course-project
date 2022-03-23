@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { SectionTitle } from "../../atoms/SectionTitle";
-
-import { language } from "../../../language";
-
-export default function EventCreateLocation() {
-    return (
-      <SectionTitle header={language.location.header}/>
-=======
 import React from 'react';
 
 import * as S from "./styles";
@@ -63,6 +54,5 @@ export default function EventCreateLocation() {
           </S.Column>
         </S.FlexContainer>
     </S.Wrapper>
->>>>>>> 6ba647fb8d897e2abb6f307f70e7fdcbf8c6cee8
     );
 }

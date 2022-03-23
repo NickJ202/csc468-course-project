@@ -34,6 +34,9 @@ export const language: ILanguage = {
         eventTitle: "Title of Event",
         description: "Decription"
     },
+    coverPhoto: {
+        header: "Cover Photo"
+    },
     timeFrame: {
         header: "Timeframe",
         startDate: "Start Date",

@@ -29,23 +29,26 @@ export interface ILanguage {
         eventTitle: string;
         description: string;
     },
+    coverPhoto: {
+        header: string;
+    },
     timeFrame: {
-        header: string,
-        startDate: string,
-        endDate: string,
-        startTime: string,
-        endTime: string,
-        timeFormatter: string,
-        dateFormatter: string
+        header: string;
+        startDate: string;
+        endDate: string;
+        startTime: string;
+        endTime: string;
+        timeFormatter: string;
+        dateFormatter: string;
     },
     location: {
-        header: string
+        header: string;
         fields: {
-            address: string,
-            city: string,
-            state: string,
-            postalCode: string,
-            country: string
+            address: string;
+            city: string;
+            state: string;
+            postalCode: string;
+            country: string;
         },
     },
     logOut: string;
@@ -72,7 +75,7 @@ export interface ILanguage {
                 firstName: string;
                 lastName: string;
                 identifier: string;
-                phoneNumber: string   
+                phoneNumber: string;
             }
         }
     },
