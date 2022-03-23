@@ -1,6 +1,7 @@
 import {ILanguage} from "./language.i";
 
 const dateFormatter = "MM / DD / YYYY";
+const timeFormatter = "00 : 00 PM";
 
 export const language: ILanguage = {
     account: {
@@ -37,13 +38,20 @@ export const language: ILanguage = {
         header: "Timeframe",
         startDate: "Start Date",
         endDate: "End Date",
+        startTime: "Start Time",
+        endTime: "End Time",
+        timeFormatter: timeFormatter,
         dateFormatter: dateFormatter
     },
     location: {
-        header: "Location"
-    },
-    coverPhoto: {
-        header: "Cover Photo"
+        header: "Location",
+        fields: {
+            address: "Address",
+            city: "City",
+            state: "State",
+            postalCode: "Postal",
+            country: "Country"
+        },
     },
     logOut: "Log out",
     org: "Organization",

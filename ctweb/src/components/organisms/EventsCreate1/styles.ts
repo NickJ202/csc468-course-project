@@ -19,6 +19,10 @@ export const Section = styled.section`
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         height: auto;
     }
+<<<<<<< HEAD
+=======
+    border: 1px solid green;
+>>>>>>> 6ba647fb8d897e2abb6f307f70e7fdcbf8c6cee8
 `;
 
 export const Section1 = styled(Section)`
@@ -36,7 +40,7 @@ export const Section2 = styled(Section)`
 `;
 
 export const BasicInfo = styled(Section1)`
-    min-height: 332.5px;
+    min-height: 350px;
     width: 400px;
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         min-height: auto;
@@ -45,7 +49,7 @@ export const BasicInfo = styled(Section1)`
 `;
 
 export const TimeFrame = styled(Section2)`
-    min-height: 332.5px;
+    min-height: 350px;
     width: calc(100% - 400px);
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         min-height: auto;

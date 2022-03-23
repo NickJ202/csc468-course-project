@@ -33,13 +33,20 @@ export interface ILanguage {
         header: string,
         startDate: string,
         endDate: string,
+        startTime: string,
+        endTime: string,
+        timeFormatter: string,
         dateFormatter: string
     },
     location: {
-        header: string;
-    },
-    coverPhoto: {
-        header: string;
+        header: string
+        fields: {
+            address: string,
+            city: string,
+            state: string,
+            postalCode: string,
+            country: string
+        },
     },
     logOut: string;
     org: string;
