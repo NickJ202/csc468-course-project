@@ -35,6 +35,12 @@ export interface ILanguage {
         endDate: string,
         dateFormatter: string
     },
+    location: {
+        header: string;
+    },
+    coverPhoto: {
+        header: string;
+    },
     logOut: string;
     org: string;
     profileImage: {
@@ -46,19 +52,19 @@ export interface ILanguage {
     signUp: {
         org: {
             fields: {
-                name: string,
-                address: string,
-                city: string,
-                state: string,
-                postalCode: string,
+                name: string;
+                address: string;
+                city: string;
+                state: string;
+                postalCode: string;
                 country: string
             }
         },
         contact: {
             fields: {
-                firstName: string,
-                lastName: string,
-                identifier: string,
+                firstName: string;
+                lastName: string;
+                identifier: string;
                 phoneNumber: string   
             }
         }

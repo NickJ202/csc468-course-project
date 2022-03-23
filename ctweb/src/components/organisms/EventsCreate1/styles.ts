@@ -19,7 +19,6 @@ export const Section = styled.section`
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         height: auto;
     }
-    border: 1px solid red;
 `;
 
 export const Section1 = styled(Section)`

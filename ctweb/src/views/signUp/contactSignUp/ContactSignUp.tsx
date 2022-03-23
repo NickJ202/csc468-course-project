@@ -13,7 +13,7 @@ export default function ContactSignUp() {
     const orgData = useSelector((state: RootState) => state.orgReducer);
 
     function handleSubmit() {
-        dispatch(registerOrgRequest(orgData));  
+        dispatch(registerOrgRequest(orgData));
     }
 
     return (

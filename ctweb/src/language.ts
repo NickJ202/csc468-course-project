@@ -39,6 +39,12 @@ export const language: ILanguage = {
         endDate: "End Date",
         dateFormatter: dateFormatter
     },
+    location: {
+        header: "Location"
+    },
+    coverPhoto: {
+        header: "Cover Photo"
+    },
     logOut: "Log out",
     org: "Organization",
     profileImage: {

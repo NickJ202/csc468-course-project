@@ -1,5 +1,9 @@
+import { SectionTitle } from "../../atoms/SectionTitle";
+
+import { language } from "../../../language";
+
 export default function EventCreateLocation() {
     return (
-      <div>location</div>
+      <SectionTitle header={language.location.header}/>
     );
 }
