@@ -4,8 +4,14 @@ import * as SC from "../../../styling-config";
 
 export const Wrapper = styled.div`
   position: relative;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
+`;
+
+export const CWrapper = styled.div`
+  height: calc(100% - ${SC.STYLING.buttonHeight});
+  width: 100%;
+  overflow-y: auto;
 `;
 
 export const Actions = styled.div`

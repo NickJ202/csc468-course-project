@@ -1,4 +1,3 @@
-#from attr import fields
 from django.contrib import admin
 from .models import newUser
 from django.contrib.auth.admin import UserAdmin

@@ -24,6 +24,15 @@ export interface ISignUpCollection {
     }
 }
 
+export interface ICreateCollection {
+    basicInfo: {
+        fields: FormFieldType[]
+    },
+    address: {
+        fields: FormFieldType[]
+    },
+}
+
 export type ButtonType = "primary" | "secondary";
 
 export type URLViewType = {
@@ -34,8 +43,7 @@ export type URLViewType = {
 }
 
 export interface IURLView {
-    account: URLViewType[],
-    eventsCreate: URLViewType[]
+    account: URLViewType[]
 }
 
 export type RefType = { current: HTMLElement };

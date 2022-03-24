@@ -66,7 +66,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
   
-  input, button {
+  input, button, textarea {
     font-size: ${props => props.theme.typography.size.small};
     font-weight: ${props => props.theme.typography.boldFontWeight};
     font-family: ${props => props.theme.typography.fontFamily};
@@ -75,7 +75,7 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
   }
   
-  input {
+  input, textarea {
     box-shadow: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -84,6 +84,12 @@ export const GlobalStyle = createGlobalStyle`
     height: 40px;
     margin: 0;
     padding: 0.5px 7.5px 0.5px 7.5px;
+  }
+
+  textarea {
+    resize: none;
+    padding: 7.5px;
+    height: 170px;
   }
 
   button {

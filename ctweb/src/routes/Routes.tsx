@@ -11,9 +11,6 @@ import {BillingSignUp} from "../views/signUp/billingSignUp";
 import {Account} from "../views/account";
 import {Events} from "../views/events";
 import {EventsCreate} from "../views/events/create";
-import {EventsCreate1} from "../views/events/create/eventsCreate1";
-import {EventsCreate2} from "../views/events/create/eventsCreate2";
-import {EventsCreate3} from "../views/events/create/eventsCreate3";
 import {EventsCreateSummary} from "../views/events/create/eventsCreateSummary";
 import {EventsCreateConfirmation} from "../views/events/create/eventsCreateConfirmation";
 import {NotFound} from "../views/notFound";
@@ -27,9 +24,6 @@ export default function Routes(props: { authenticated: boolean }) {
             </Route>
             <Route exact path={U.events} render={() => <View view={Events}/>}/>
             <Route exact path={U.eventsCreate} render={() => <View view={EventsCreate}/>}/>
-            <Route exact path={U.eventsCreate1} render={() => <View view={EventsCreate1}/>}/>
-            <Route exact path={U.eventsCreate2} render={() => <View view={EventsCreate2}/>}/>
-            <Route exact path={U.eventsCreate3} render={() => <View view={EventsCreate3}/>}/>
             <Route exact path={U.eventsCreateSummary} render={() => <View view={EventsCreateSummary}/>}/>
             <Route exact path={U.eventsCreateConfirmation} render={() => <View view={EventsCreateConfirmation}/>}/>
             <Route exact path={[U.account, U.accountActive]} render={() => <View view={Account}/>}/>

@@ -24,6 +24,33 @@ export interface ILanguage {
         title: string;
         createFirst: string;
     },
+    basicInfo: {
+        header: string;
+        eventTitle: string;
+        description: string;
+    },
+    coverPhoto: {
+        header: string;
+    },
+    timeFrame: {
+        header: string;
+        startDate: string;
+        endDate: string;
+        startTime: string;
+        endTime: string;
+        timeFormatter: string;
+        dateFormatter: string;
+    },
+    location: {
+        header: string;
+        fields: {
+            address: string;
+            city: string;
+            state: string;
+            postalCode: string;
+            country: string;
+        },
+    },
     logOut: string;
     org: string;
     profileImage: {
@@ -35,20 +62,20 @@ export interface ILanguage {
     signUp: {
         org: {
             fields: {
-                name: string,
-                address: string,
-                city: string,
-                state: string,
-                postalCode: string,
+                name: string;
+                address: string;
+                city: string;
+                state: string;
+                postalCode: string;
                 country: string
             }
         },
         contact: {
             fields: {
-                firstName: string,
-                lastName: string,
-                identifier: string,
-                phoneNumber: string   
+                firstName: string;
+                lastName: string;
+                identifier: string;
+                phoneNumber: string;
             }
         }
     },
