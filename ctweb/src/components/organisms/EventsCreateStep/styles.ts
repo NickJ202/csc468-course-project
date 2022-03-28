@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CWrapper = styled.div`
-  height: calc(100% - ${SC.STYLING.buttonHeight});
+  height: calc(100% - ${SC.STYLING.buttonHeight} - 20px);
   width: 100%;
   overflow-y: auto;
 `;
