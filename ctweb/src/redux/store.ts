@@ -4,7 +4,8 @@ import {createLogger} from "redux-logger";
 import storage from "redux-persist/lib/storage/session";
 import {persistStore, persistReducer} from "redux-persist";
 
-import orgReducer from "./org/reducers"
+import orgReducer from "./org/reducers";
+import eventCreateReducer from "./events/reducers";
  
 const persistConfig = {
     key: "root",
@@ -12,7 +13,8 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-    orgReducer
+    orgReducer,
+    eventCreateReducer
 });
 
 export type RootState = ReturnType<typeof store.getState>

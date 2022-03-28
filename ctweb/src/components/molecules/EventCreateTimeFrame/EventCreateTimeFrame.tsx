@@ -8,35 +8,33 @@ import { SectionTitle } from "../../atoms/SectionTitle";
 
 import * as S from "./styles";
 import { language } from "../../../language";
-import { Button } from "../../atoms/Button";
-import { BigIntStats } from "fs";
 
 export default function EventCreateTimeFrame() {
   const [calendarDate, setCalendarDate] = React.useState(new Date());
-  const [stringDate, setStringDate] = React.useState<string>("");
   const [startDate, setStartDate] = React.useState<string>("");
   const [endDate, setEndDate] = React.useState<string>("");
-  const [startTime, setStartTime] = React.useState<string>("");
-  const [endTime, setEndTime] = React.useState<string>("");
+  // const [startTime, setStartTime] = React.useState<string>("");
+  // const [endTime, setEndTime] = React.useState<string>("");
 
   const onDateChange = (date: any) => {
     setCalendarDate(date);
-    var dd = String(date.getDate()).padStart(2, '0');
-    var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = date.getFullYear();
+    let dd = String(date.getDate()).padStart(2, '0');
+    let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = date.getFullYear();
 
-    var today = mm + '/' + dd + '/' + yyyy;
-    console.log(today);
-    setStringDate(today);
+    let parsedDate = mm + '/' + dd + '/' + yyyy;
+    console.log(parsedDate);
+    if (startDate.length <= 0) {
+      setStartDate(parsedDate);
+    }
+    else {
+      setEndDate(parsedDate);
+    }
   }
 
-  const handleStartClick = () => {
-    setStartDate(stringDate);
-  }
-
-  const handleEndClick = () => {
-    setEndDate(stringDate);
-  }
+  React.useEffect(() => {
+    console.log()
+  }, []);
 
   return (
     <S.Wrapper>
@@ -57,7 +55,7 @@ export default function EventCreateTimeFrame() {
             onChange={(e) => setEndDate(e.target.value)}
             placeholder={language.timeFrame.dateFormatter}
           />
-          <FormField
+          {/* <FormField
             label={language.timeFrame.startTime}
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
@@ -68,13 +66,11 @@ export default function EventCreateTimeFrame() {
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
             placeholder={language.timeFrame.timeFormatter}
-          />
+          /> */}
         </S.Fields>
         <S.CalendarContainer>
           <S.Calendar>
             <Calendar onChange={onDateChange} value={calendarDate} />
-            <S.Button onClick={handleStartClick}>Set Start Date</S.Button>
-            <S.Button onClick={handleEndClick}>Set End Date</S.Button>          
           </S.Calendar>
         </S.CalendarContainer>
       </S.FlexContainer>

@@ -16,7 +16,10 @@ export const Table = styled.table`
 export const Column = styled.div`
     float: left;
     width: 50%;
-    padding: 10px;    
+`;
+
+export const PColumn = styled(Column)`
+    padding-left: 10px;
 `;
 
 export const FlexContainer = styled.div`

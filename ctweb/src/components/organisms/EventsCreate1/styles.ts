@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         flex-wrap: nowrap;
         flex-direction: column;
@@ -55,14 +54,14 @@ export const TimeFrame = styled(Section2)`
 `;
 
 export const Location = styled(Section1)`
-    width: 500px;
+    width: 400px;
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         width: 100%;
     }
 `;
 
 export const CoverPhoto = styled(Section2)`
-    width: calc(100% - 500px);
+    width: calc(100% - 400px);
     @media(max-width: ${SC.STYLING.cutoffInitial}) {
         width: 100%;
     }
