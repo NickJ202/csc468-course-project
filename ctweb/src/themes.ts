@@ -35,6 +35,9 @@ export const theme: DefaultTheme = {
             primary: {
                 background: THEME.default.white,
                 hover: THEME.default.offWhite,
+            },
+            secondary: {
+                background: THEME.default.offWhite
             }
         },
         font: {

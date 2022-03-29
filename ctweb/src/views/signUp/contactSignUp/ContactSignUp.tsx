@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { SignUpStep } from "../../../components/molecules/SignUpStep";
+import { AdminSignUpForm } from "../../../components/molecules/AdminSignUpForm";
+import { SignUpStep } from "../../../components/organisms/SignUpStep";
 
 import * as CF from "../../../config";
 import { language } from "../../../language";
@@ -8,9 +9,11 @@ import { registerOrgRequest } from "../../../redux/org/actions";
 
 import { RootState } from "../../../redux/store";
 
+// { name: "identifier", label: language.signUp.contact.fields.identifier },
+
 export default function ContactSignUp() {
     const dispatch = useDispatch();
-    const orgData = useSelector((state: RootState) => state.orgReducer);
+    const orgData = useSelector((state: RootState) => state.orgCreateReducer);
 
     function handleSubmit() {
         console.log(orgData);
@@ -24,7 +27,7 @@ export default function ContactSignUp() {
             submitBtnLabel={language.continue}
             handleSubmit={handleSubmit}
         >
-            <p>Admin Contact</p>
+            <AdminSignUpForm />
         </SignUpStep>
     )
 }

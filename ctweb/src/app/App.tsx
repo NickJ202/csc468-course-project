@@ -3,7 +3,7 @@ import {Root} from "../root";
 export default function App() {
     return (
         <>
-            <Root authenticated={true}/>
+            <Root authenticated={false}/>
         </>
     );
 }

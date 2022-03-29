@@ -51,8 +51,7 @@ export const SIGNUP: ISignUpCollection = {
         fields: [
             { name: "firstName", label: language.signUp.contact.fields.firstName },
             { name: "lastName", label: language.signUp.contact.fields.lastName },
-            { name: "phoneNumber", label: language.signUp.contact.fields.phoneNumber },
-            { name: "identifier", label: language.signUp.contact.fields.identifier },
+            { name: "phoneNumber", label: language.signUp.contact.fields.phoneNumber }
         ]
     },
 };

@@ -24,6 +24,9 @@ declare module "styled-components" {
                 primary: {
                     background: string;
                     hover: string;
+                },
+                secondary: {
+                    background: string;
                 }
             },
             font: {

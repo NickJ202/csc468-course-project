@@ -6,6 +6,7 @@ export default function FormField(props: IProps) {
         <S.Wrapper>
             <label>{props.label}</label>
             <S.Input
+                type={props.type ? props.type : "text"}
                 value={props.value}
                 onChange={props.onChange}
                 disabled={false}

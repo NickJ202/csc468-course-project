@@ -11,6 +11,7 @@ export interface ILanguage {
             title: string;
         }
     },
+    adminSignUpInfo: string;
     back: string;
     contact: string;
     continue: string;
@@ -51,6 +52,7 @@ export interface ILanguage {
             country: string;
         },
     },
+    logInInfo: string;
     logOut: string;
     org: string;
     profileImage: {
@@ -75,6 +77,8 @@ export interface ILanguage {
                 firstName: string;
                 lastName: string;
                 identifier: string;
+                password: string;
+                passwordConfirm: string;
                 phoneNumber: string;
             }
         }

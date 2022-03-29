@@ -15,7 +15,7 @@ import { RootState } from "../../../redux/store";
 
 export default function SignUpStep(props: IProps) {
     const dispatch = useDispatch();
-    const orgData = useSelector((state: RootState) => state.orgReducer);
+    const orgData = useSelector((state: RootState) => state.orgCreateReducer);
     const [formState, setFormState] = React.useState<any>(undefined);
 
     React.useEffect(() => {

@@ -13,6 +13,8 @@ type OrgContactType = {
     firstName: NStringType;
     lastName: NStringType;
     identifier: NStringType;
+    password: NStringType;
+    passwordConfirm: NStringType;
     phoneNumber: NStringType;
 }
 

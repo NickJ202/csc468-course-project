@@ -1,4 +1,4 @@
-import * as C from "../events/constants";
+import * as C from "./constants";
 import { OrgType, OrgActionType } from "./types";
 
 export const initialState: OrgType = {
@@ -11,12 +11,14 @@ export const initialState: OrgType = {
     firstName: null,
     lastName: null,
     identifier: null,
+    password: null,
+    passwordConfirm: null,
     phoneNumber: null,
 }
 
-export default function eventCreateReducer(state: OrgType = initialState, action: OrgActionType) {
+export default function orgCreateReducer(state: OrgType = initialState, action: OrgActionType) {
     switch(action.type) {
-        case C.STORE_PARTIAL_EVENT:
+        case C.STORE_PARTIAL_ORG:
             return Object.assign({}, state, {
                 name: action.payload.name ?? state.name,
                 address1: action.payload.address1 ?? state.address1,
@@ -27,6 +29,8 @@ export default function eventCreateReducer(state: OrgType = initialState, action
                 firstName: action.payload.firstName ?? state.firstName,
                 lastName: action.payload.lastName ?? state.lastName,
                 identifier: action.payload.identifier ?? state.identifier,
+                password: action.payload.password ?? state.password,
+                passwordConfirm: action.payload.passwordConfirm ?? state.passwordConfirm,
                 phoneNumber: action.payload.phoneNumber ?? state.phoneNumber,
             });
         default:

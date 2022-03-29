@@ -81,14 +81,13 @@ export const GlobalStyle = createGlobalStyle`
     -moz-appearance: none;
     appearance: none;
     border: 1px solid ${props => props.theme.colors.border.primary};
-    height: 40px;
+    height: 42.5px;
     margin: 0;
-    padding: 0.5px 7.5px 0.5px 7.5px;
+    padding: 10px;
   }
 
   textarea {
     resize: none;
-    padding: 7.5px;
     height: 170px;
   }
 

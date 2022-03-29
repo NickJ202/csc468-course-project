@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 import { ProfileImage } from "../../../components/molecules/ProfileImage";
-import { SignUpStep } from "../../../components/molecules/SignUpStep";
+import { SignUpStep } from "../../../components/organisms/SignUpStep";
 
 import * as U from "../../../urls";
 import * as CF from "../../../config";

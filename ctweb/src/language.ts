@@ -16,6 +16,7 @@ export const language: ILanguage = {
             title: "Settings"
         }
     },
+    adminSignUpInfo: "Please enter your email and create a password, this will be the administrative user of the system",
     back: "Back",
     contact: "Contact",
     continue: "Continue",
@@ -56,6 +57,7 @@ export const language: ILanguage = {
             country: "Country"
         },
     },
+    logInInfo: "Login information",
     logOut: "Log out",
     org: "Organization",
     profileImage: {
@@ -80,6 +82,8 @@ export const language: ILanguage = {
                 firstName: "First Name",
                 lastName: "Last Name",
                 identifier: "Email Address",
+                password: "Password",
+                passwordConfirm: "Confirm Password",
                 phoneNumber: "Phone Number"
             }
         }

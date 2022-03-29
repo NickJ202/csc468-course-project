@@ -3,7 +3,13 @@ import styled from "styled-components";
 import * as SC from "../../../styling-config";
 
 export const Wrapper = styled.div`
-  display: flex;
+  height: 680px;
+  width: 1200px;
+  max-width: 98.5vw;
+  margin: 0 auto;
+  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+    height: auto;
+  }
 `;
 
 export const HContainer = styled.div`
@@ -22,8 +28,9 @@ export const BContainer = styled.div`
   padding: 20px;
 `;
 
-export const Form = styled.div`
-  display: flex;
+export const Form = styled.form`
+  height: 100%;
+  width: 100%;
 `;
 
 export const StepWrapper = styled.div`
@@ -93,10 +100,6 @@ export const Children = styled.div`
 `;
 
 export const ChildContainer = styled.div`
-  height: 67.5%;
-  width: 87.5%;
-`;
-
-export const Gap = styled.div`
-  height: 50px;
+  height: 100%;
+  width: 100%;
 `;
