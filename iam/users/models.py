@@ -47,6 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     date_joined = models.DateTimeField(default=timezone.now)
+    # org = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="contact") Need different means of storing org id
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -65,7 +66,8 @@ class Organization(models.Model):
     country = models.CharField(max_length=300)
     name = models.CharField(max_length=150)
     phone = models.CharField(max_length=150)
-    members = models.ManyToManyField(User)
+    members = models.ManyToManyField(User, related_name="members")
+    contact = models.ForeignKey(User, on_delete=models.CASCADE, related_name="contact")
 
     REQUIRED_FIELDS = [name]
 
@@ -81,7 +83,7 @@ class Event(models.Model):
     organizer = models.ForeignKey(Organization, on_delete=models.CASCADE)
     location = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
-    attendees = models.ManyToManyField(User)
+    attendees = models.ManyToManyField(User, related_name="attendees")
 
     REQUIRED_FIELDS = [name]
 
