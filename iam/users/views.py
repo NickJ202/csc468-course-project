@@ -11,7 +11,7 @@ from rest_framework import status
 from users.models import User
 from iam import http_response as http
 
-class OrgRegisterView(APIView):
+class UserRegisterView(APIView):
     def get(self, request):
         # return http.success("GET - prob will use this to fetch org by id")
         users = User.objects.all()
