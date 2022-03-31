@@ -29,7 +29,6 @@ class UserRegisterView(APIView):
 
 class OrgRegisterView(APIView):
     def get(self, request):
-        # return http.success("GET - prob will use this to fetch org by id")
         orgs = Organization.objects.all()
         serializer = OrgSerializer(orgs, many=True)
         return Response(serializer.data)
@@ -38,23 +37,26 @@ class OrgRegisterView(APIView):
         # print("Register Org: " + request.data['name'])
         # return http.success()
         serializer = OrgSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        import pdb;
+        pdb.set_trace()
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response("!!", status=status.HTTP_400_BAD_REQUEST)
 
-def dashboard(request):
-    return render(request, "users/dashboard.html")
-
-def register(request):
-    if request.method == "GET":
-        return render(
-            request, "users/register.html",
-            {"form": CustomUserCreationForm}
-        )
-    elif request.method == "POST":
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect(reverse("dashboard"))
+# def dashboard(request):
+#     return render(request, "users/dashboard.html")
+#
+# def register(request):
+#     if request.method == "GET":
+#         return render(
+#             request, "users/register.html",
+#             {"form": CustomUserCreationForm}
+#         )
+#     elif request.method == "POST":
+#         form = CustomUserCreationForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect(reverse("dashboard"))
