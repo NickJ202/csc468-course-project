@@ -3,12 +3,17 @@ version: "3.9"
 services:
   db:
     image: postgres
+    ports:
+      - "5432"
     volumes:
       - ./data/db:/var/lib/postgresql/data
+    # environment:
+    #   - "POSTGRES_HOST_AUTH_METHOD=trust"
     environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_NAME=centigro
+      - POSTGRES_USER=centigrouser
+      - POSTGRES_PASSWORD=42qG&80t$k@TF%
+      - HOST=127.0.0.1
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -16,10 +21,10 @@ services:
       - .:/code
     ports:
       - "8000:8000"
-    environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    # environment:
+    #   - POSTGRES_NAME=centigro
+    #   - POSTGRES_USER=centigrouser
+    #   - POSTGRES_PASSWORD=42qG&80t$k@TF%
     depends_on:
       - db
 
