@@ -2,6 +2,7 @@
 # from django.shortcuts import redirect, render
 # from django.urls import reverse
 # from users.forms import CustomUserCreationForm
+from rest_framework import generics
 from rest_framework.views import APIView
 from django.http import HttpResponse, JsonResponse
 from users.serializers import UserSerializer, OrgSerializer
@@ -11,39 +12,28 @@ from rest_framework import status
 from users.models import User, Organization, Event
 from iam import http_response as http
 
-class UserRegisterView(APIView):
-    def get(self, request):
-        # return http.success("GET - prob will use this to fetch org by id")
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
-        return Response(serializer.data)
+class UserListView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
-    def post(self, request):
-        # print("Register Org: " + request.data['name'])
-        # return http.success()
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
-class OrgRegisterView(APIView):
-    def get(self, request):
-        orgs = Organization.objects.all()
-        serializer = OrgSerializer(orgs, many=True)
-        return Response(serializer.data)
+class OrgListView(generics.ListCreateAPIView):
+    queryset = Organization.objects.all()
+    serializer_class = OrgSerializer
 
-    def post(self, request):
-        # print("Register Org: " + request.data['name'])
-        # return http.success()
-        serializer = OrgSerializer(data=request.data)
-        import pdb;
-        pdb.set_trace()
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        return Response("!!", status=status.HTTP_400_BAD_REQUEST)
+    # def post(self, request, *args, **kwargs):
+    #     serializer = self.serializer_class(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class OrgDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Organization.objects.all()
+    serializer_class = OrgSerializer
 
 # def dashboard(request):
 #     return render(request, "users/dashboard.html")
