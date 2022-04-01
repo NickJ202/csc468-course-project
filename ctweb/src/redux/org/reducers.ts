@@ -1,5 +1,5 @@
 import * as C from "./constants";
-import { OrgType, OrgActionType } from "./types";
+import { OrgActionType } from "./types";
 
 // Should be OrgType workaround to nest objects
 export const initialState: any = {
