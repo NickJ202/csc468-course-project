@@ -20,6 +20,7 @@ export default function OrgSignup() {
             title={language.org}
             fields={CF.SIGNUP.org.fields}
             submitBtnLabel={language.continue}
+            loading={false}
             handleSubmit={handleSubmit}
         >
             <ProfileImage />

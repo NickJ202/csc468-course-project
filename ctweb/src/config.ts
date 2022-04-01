@@ -9,7 +9,7 @@ import * as U from "./urls";
 
 const API_URI = process.env.REACT_APP_API_URI;
 
-export const ORG_ENDPOINT = API_URI + "org/register/";
+export const ORG_ENDPOINT = API_URI + "orgs/";
 const AUTH_URI = process.env.REACT_APP_AUTH_URI;
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 
@@ -51,7 +51,7 @@ export const SIGNUP: ISignUpCollection = {
         fields: [
             { name: "firstName", label: language.signUp.contact.fields.firstName },
             { name: "lastName", label: language.signUp.contact.fields.lastName },
-            { name: "phoneNumber", label: language.signUp.contact.fields.phoneNumber }
+            { name: "phone", label: language.signUp.contact.fields.phone }
         ]
     },
 };

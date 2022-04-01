@@ -1,5 +1,7 @@
-import {IProps} from "./types";
+import { IProps } from "./types";
 import * as S from "./styles";
+
+import { Loader } from "../Loader";
 
 export default function Button(props: IProps) {
     const buttonStyle = getType();
@@ -27,8 +29,9 @@ export default function Button(props: IProps) {
             type={props.formSubmit ? "submit" : "button"}
             onClick={props.handlePress}
             onKeyPress={props.handlePress}
+            disabled={props.disabled}
         >
-            {props.label}
+            {props.loading ? <Loader alt/> : props.label}
         </StyledButton>
     );
 }

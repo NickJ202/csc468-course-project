@@ -11,6 +11,7 @@ declare module "styled-components" {
             button: {
                 primary: {
                     background: string;
+                    disabled: string;
                     label: string;
                     hover: string;
                 },

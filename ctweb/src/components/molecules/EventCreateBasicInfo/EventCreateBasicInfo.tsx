@@ -25,11 +25,6 @@ export default function EventCreateBasicInfo() {
                 {
                     title: title,
                     description: description,
-                    address1: null,
-                    locality: null,
-                    administrativeArea: null,
-                    postalCode: null,
-                    country: null
                 }
             )
         );

@@ -6,6 +6,7 @@ export interface IProps {
     fields: FormFieldType[];
     submitBtnLabel: string;
     handleSubmit: (formState: any) => void;
+    loading: boolean;
     children: React.ReactNode;
 }
 

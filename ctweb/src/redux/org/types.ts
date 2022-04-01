@@ -1,6 +1,6 @@
 import { NStringType } from "../../types";
 
-type OrgInfoType = {
+export type OrgInfoType = {
     name: NStringType;
     address1: NStringType;
     locality: NStringType;
@@ -9,16 +9,18 @@ type OrgInfoType = {
     country: NStringType;
 }
 
-type OrgContactType = {
+export type OrgContactType = {
     firstName: NStringType;
     lastName: NStringType;
-    identifier: NStringType;
-    password: NStringType;
-    passwordConfirm: NStringType;
-    phoneNumber: NStringType;
+    phone: NStringType;
 }
 
-export type OrgType = OrgInfoType & OrgContactType;
+export type OrgAdminType = {
+    email: NStringType;
+    password: NStringType;
+}
+
+export type OrgType = OrgInfoType & OrgContactType & OrgAdminType;
 
 export type OrgActionType = {
     type: string;

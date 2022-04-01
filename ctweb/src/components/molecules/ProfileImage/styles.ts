@@ -7,8 +7,7 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 
-export const Title = styled.h2`
-  font-size: 20px;
+export const Title = styled.h1`
   text-align: center;
   margin-bottom: 50px;
 `;

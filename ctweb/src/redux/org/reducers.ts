@@ -1,23 +1,26 @@
 import * as C from "./constants";
 import { OrgType, OrgActionType } from "./types";
 
-export const initialState: OrgType = {
+// Should be OrgType workaround to nest objects
+export const initialState: any = {
     name: null,
     address1: null,
     locality: null,
     administrativeArea: null,
     postalCode: null,
     country: null,
-    firstName: null,
-    lastName: null,
-    identifier: null,
-    password: null,
-    passwordConfirm: null,
-    phoneNumber: null,
+    admin: {
+        email: null,
+        password: null,
+        firstName: null,
+        lastName: null,
+        phone: null
+    }
 }
 
-export default function orgCreateReducer(state: OrgType = initialState, action: OrgActionType) {
-    switch(action.type) {
+// Should be OrgType workaround to nest objects
+export default function orgCreateReducer(state: any = initialState, action: OrgActionType) {
+    switch (action.type) {
         case C.STORE_PARTIAL_ORG:
             return Object.assign({}, state, {
                 name: action.payload.name ?? state.name,
@@ -26,12 +29,13 @@ export default function orgCreateReducer(state: OrgType = initialState, action: 
                 administrativeArea: action.payload.administrativeArea ?? state.administrativeArea,
                 postalCode: action.payload.postalCode ?? state.postalCode,
                 country: action.payload.country ?? state.country,
-                firstName: action.payload.firstName ?? state.firstName,
-                lastName: action.payload.lastName ?? state.lastName,
-                identifier: action.payload.identifier ?? state.identifier,
-                password: action.payload.password ?? state.password,
-                passwordConfirm: action.payload.passwordConfirm ?? state.passwordConfirm,
-                phoneNumber: action.payload.phoneNumber ?? state.phoneNumber,
+                admin: {
+                    email: action.payload.email ?? state.admin.email,
+                    password: action.payload.password ?? state.admin.password,
+                    firstName: action.payload.firstName ?? state.admin.firstName,
+                    lastName: action.payload.lastName ?? state.admin.lastName,
+                    phone: action.payload.phone ?? state.admin.phone,
+                },
             });
         default:
             return state;

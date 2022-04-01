@@ -76,10 +76,10 @@ export interface ILanguage {
             fields: {
                 firstName: string;
                 lastName: string;
-                identifier: string;
+                email: string;
                 password: string;
                 passwordConfirm: string;
-                phoneNumber: string;
+                phone: string;
             }
         }
     },

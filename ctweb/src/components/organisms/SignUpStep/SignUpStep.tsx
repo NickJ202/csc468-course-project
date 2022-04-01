@@ -15,7 +15,7 @@ import { RootState } from "../../../redux/store";
 
 export default function SignUpStep(props: IProps) {
     const dispatch = useDispatch();
-    const orgData = useSelector((state: RootState) => state.orgCreateReducer);
+    const orgCreateData = useSelector((state: RootState) => state.orgCreateReducer);
     const [formState, setFormState] = React.useState<any>(undefined);
 
     React.useEffect(() => {
@@ -23,23 +23,23 @@ export default function SignUpStep(props: IProps) {
             let fields: IFields = {};
             for (const field of props.fields) {
                 fields[field.name] = {
-                    value: orgData[field.name],
+                    value: orgCreateData[field.name] || orgCreateData.admin[field.name],
                     invalid: false
                 }
             }
             setFormState(fields)
         }
-    }, [orgData, formState, props.fields]);
+    }, [orgCreateData, formState, props.fields]);
 
     function handleChange(name: string, e: React.ChangeEvent<HTMLInputElement>) {
         let fields = { ...formState };
         fields[name].value = e.target.value;
         setFormState(fields);
-        let orgData: any = {};
+        let orgCreateData: any = {admin:{}};
         for (const field in fields) {
-            orgData[field] = fields[field].value;
+            orgCreateData[field] = fields[field].value;
         }
-        dispatch(storePartialOrg(orgData));
+        dispatch(storePartialOrg(orgCreateData));
     }
 
     function handleSubmit(e: React.SyntheticEvent) {
@@ -81,7 +81,8 @@ export default function SignUpStep(props: IProps) {
                                     <Button
                                         formSubmit={true}
                                         label={props.submitBtnLabel}
-                                        disabled={true}
+                                        disabled={props.loading}
+                                        loading={props.loading}
                                         type={"primary"}
                                         handlePress={(e: React.SyntheticEvent) => handleSubmit(e)}
                                     />

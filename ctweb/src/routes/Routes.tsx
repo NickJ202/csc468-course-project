@@ -7,7 +7,6 @@ import {SignUpView, View} from "../views/Views";
 import {SignUp} from "../views/signUp";
 import {OrgSignUp} from "../views/signUp/orgSignUp";
 import {ContactSignUp} from "../views/signUp/contactSignUp";
-import {BillingSignUp} from "../views/signUp/billingSignUp";
 import {Account} from "../views/account";
 import {Events} from "../views/events";
 import {EventsCreate} from "../views/events/create";
@@ -37,7 +36,6 @@ export default function Routes(props: { authenticated: boolean }) {
             <Route exact path={U.signUp} render={() => <SignUpView view={SignUp}/>}/>
             <Route exact path={U.signUpOrganization} render={() => <SignUpView view={OrgSignUp}/>}/>
             <Route exact path={U.signUpContact} render={() => <SignUpView view={ContactSignUp}/>}/>
-            <Route exact path={U.signUpBilling} render={() => <SignUpView view={BillingSignUp}/>}/>
         </Switch>
     )
 }

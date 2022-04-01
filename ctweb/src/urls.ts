@@ -9,4 +9,3 @@ export const eventsCreateConfirmation = `${eventsCreate}confirmation/`;
 export const signUp = `${base}signup/`;
 export const signUpOrganization = `${signUp}organization/`;
 export const signUpContact = `${signUp}contact/`;
-export const signUpBilling = `${signUp}billing/`;

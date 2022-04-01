@@ -79,7 +79,7 @@ export default function Navigation() {
                 <S.AccountNavigationContainer>
                     <AccountNavigation
                         desktop={desktop}
-                        identifier={"nickjuliano20@gmail.com"}
+                        email={"nickjuliano20@gmail.com"}
                     />
                 </S.AccountNavigationContainer>
             </S.HeaderContainer>

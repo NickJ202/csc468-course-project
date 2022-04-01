@@ -81,10 +81,10 @@ export const language: ILanguage = {
             fields: {
                 firstName: "First Name",
                 lastName: "Last Name",
-                identifier: "Email Address",
+                email: "Email Address",
                 password: "Password",
                 passwordConfirm: "Confirm Password",
-                phoneNumber: "Phone Number"
+                phone: "Phone Number"
             }
         }
     },

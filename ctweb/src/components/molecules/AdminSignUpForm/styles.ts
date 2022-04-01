@@ -5,13 +5,11 @@ import * as SC from "../../../styling-config";
 export const Wrapper = styled.div`
     height: 95%;
     width: 100%;
-    padding: 25px 0;
 `;
 
-export const Title = styled.h2`
-  font-size: 20px;
+export const Title = styled.h1`
   text-align: center;
-  margin-bottom: 25px;
+  color: ${props => props.theme.colors.font.secondary};
 `;
 
 export const Content = styled.div`
@@ -19,7 +17,7 @@ export const Content = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin: 40px 0 20px 0;
+  margin: 10px 0 20px 0;
 `;
 
 export const PContent = styled.div`

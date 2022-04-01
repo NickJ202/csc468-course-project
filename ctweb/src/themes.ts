@@ -22,6 +22,7 @@ export const theme: DefaultTheme = {
         button: {
             primary: {
                 background: THEME.default.green,
+                disabled: "#9EDEC1",
                 label: THEME.default.white,
                 hover: "#39A373"
             },

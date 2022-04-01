@@ -7,6 +7,10 @@ export const Primary = styled.button`
     cursor: pointer;
     background: ${props => props.theme.colors.button.primary.hover};
   }
+  &:disabled {
+    cursor: not-allowed;
+    background: ${props => props.theme.colors.button.primary.disabled};
+  }
 `;
 
 export const Secondary = styled.button`

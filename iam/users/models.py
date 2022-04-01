@@ -4,7 +4,6 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as trans  # gettext_lazy is a translation function
 
-
 class UserManager(BaseUserManager):
 
     def create_superuser(self, email, password, **other_fields):
@@ -39,9 +38,11 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(trans('email address'), unique=True)
+    password = models.CharField(max_length=150)
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
     phone = models.CharField(max_length=150)
+
     is_organizer = models.BooleanField(default=False)
     is_attendee = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
@@ -56,35 +57,18 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-class Organization(models.Model):
-    address_1 = models.CharField(max_length=1024)
-    address_2 = models.CharField(max_length=1024)
-    postal_code = models.CharField(max_length=300)
-    locality = models.CharField(max_length=300)
-    state = models.CharField(max_length=300)
-    country = models.CharField(max_length=300)
-    name = models.CharField(max_length=150)
-    phone = models.CharField(max_length=150)
-    members = models.ManyToManyField(User, related_name="members")
-    contact = models.ForeignKey(User, on_delete=models.CASCADE, related_name="contact")
+# class Event(models.Model):
+#     name = models.CharField(max_length=100)
+#     date = models.DateField()
+#     startTime = models.TimeField()
+#     endTime = models.TimeField()
+#     tag = models.CharField(max_length=100)
+#     organizer = models.ForeignKey(Organization, on_delete=models.CASCADE)
+#     location = models.CharField(max_length=100)
+#     description = models.CharField(max_length=100)
+#     attendees = models.ManyToManyField(User, related_name="attendees")
 
-    REQUIRED_FIELDS = [name]
+#     REQUIRED_FIELDS = [name]
 
-    def __str__(self):
-        return self.name
-
-class Event(models.Model):
-    name = models.CharField(max_length=100)
-    date = models.DateField()
-    startTime = models.TimeField()
-    endTime = models.TimeField()
-    tag = models.CharField(max_length=100)
-    organizer = models.ForeignKey(Organization, on_delete=models.CASCADE)
-    location = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
-    attendees = models.ManyToManyField(User, related_name="attendees")
-
-    REQUIRED_FIELDS = [name]
-
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name

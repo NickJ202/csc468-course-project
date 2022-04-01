@@ -4,9 +4,9 @@ import { Dispatch } from "redux";
 import { post } from "../services";
 import * as C from "./constants";
 import * as CF from "../../config";
-import { OrgType } from "./types";
+import * as T from "./types";
 
-export function storePartialOrg(payload: OrgType) {
+export function storePartialOrg(payload: T.OrgInfoType | T.OrgContactType | T.OrgAdminType) {
     return (dispatch: Dispatch) => {
         dispatch({
             type: C.STORE_PARTIAL_ORG,
@@ -15,7 +15,7 @@ export function storePartialOrg(payload: OrgType) {
     }
 }
 
-export function registerOrgRequest(payload: OrgType) {
+export function registerOrgRequest(payload: T.OrgType) {
     return (dispatch: Dispatch) =>
         post(CF.ORG_ENDPOINT, payload).then(
             response => {

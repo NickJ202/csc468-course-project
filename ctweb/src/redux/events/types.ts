@@ -1,11 +1,11 @@
 import { NStringType } from "../../types";
 
-type EventBasicInfoType = {
+export type EventBasicInfoType = {
     title: NStringType;
     description: NStringType;
 }
 
-type EventLocationType = {
+export type EventLocationType = {
     address1: NStringType;
     locality: NStringType;
     administrativeArea: NStringType;

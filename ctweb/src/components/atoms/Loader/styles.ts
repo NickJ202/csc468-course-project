@@ -86,3 +86,27 @@ export const Spinner = styled.div`
       animation-delay: 0.0s;
     }
 `;
+
+export const AltLoader = styled.div`
+    border: 2.25px solid ${props => props.theme.colors.transparent};
+    border-top: 2.25px solid ${props => props.theme.colors.font.alt.primary};
+    border-right: 2.25px solid ${props => props.theme.colors.font.alt.primary};
+    border-radius: 50%;
+    width: 16.5px;
+    height: 16.5px;
+    margin-top: 2.5px;
+    animation: spin 0.5s linear infinite;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+`;
+
+export const AltContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: ${props => props.theme.colors.transparent};
+  z-index: 3;
+`;

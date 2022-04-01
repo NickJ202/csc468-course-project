@@ -8,7 +8,7 @@ import {OuterHandler} from "../../../handlers/OuterHandler";
 import account from "../../../assets/account.svg";
 import chevronUD from "../../../assets/chevron-ud.svg";
 
-import {formatIdentifier, handleLogout} from "../../../util";
+import {formatEmail, handleLogout} from "../../../util";
 
 import {language} from "../../../language";
 
@@ -22,7 +22,7 @@ export default function AccountNavigation(props: IProps) {
     return (
         <>
             <OuterHandler handler={() => setActive(!active)} active={active}>
-                <S.IdentifierClosed
+                <S.EmailClosed
                     active={active}
                     onClick={() => setActive(!active)}
                 >
@@ -30,21 +30,21 @@ export default function AccountNavigation(props: IProps) {
                         <S.Icon active={active}>
                             <ReactSVG src={account}/>
                         </S.Icon>
-                        <S.FormattedIdentifier active={active}>
-                            {formatIdentifier(props.identifier)}
-                        </S.FormattedIdentifier>
+                        <S.FormattedEmail active={active}>
+                            {formatEmail(props.email)}
+                        </S.FormattedEmail>
                         <S.ChevronIcon active={active}>
                             <ReactSVG src={chevronUD}/>
                         </S.ChevronIcon>
                     </S.ClosedCenterContainer>
-                </S.IdentifierClosed>
+                </S.EmailClosed>
 
                 {active &&
                 <S.AccountBodyContainer>
                     <S.BodyTopContainer>
-                        <S.Identifier>
-                            <b>{props.identifier}</b>
-                        </S.Identifier>
+                        <S.Email>
+                            <b>{props.email}</b>
+                        </S.Email>
                         <S.LogOut onClick={handleLogout}>
                             {language.logOut}
                         </S.LogOut>

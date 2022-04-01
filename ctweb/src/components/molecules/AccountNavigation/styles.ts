@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import {IStyleProps} from "../../../types";
 
-export const IdentifierClosed = styled.button<IStyleProps>`
+export const EmailClosed = styled.button<IStyleProps>`
   height: 100%;
   width: 135px;
   position: relative;
@@ -37,7 +37,7 @@ export const Icon = styled.div<IStyleProps>`
   }
 `;
 
-export const FormattedIdentifier = styled.p<IStyleProps>`
+export const FormattedEmail = styled.p<IStyleProps>`
   color: ${props => props.active ?
           props.theme.colors.font.active : props.theme.colors.font.primary};
   margin-top: -2px;
@@ -74,7 +74,7 @@ export const BodyBottomContainer = styled.div`
   margin-top: 20px;
 `;
 
-export const Identifier = styled.p`
+export const Email = styled.p`
   max-width: 75%;
   overflow-x: hidden;
   text-overflow: ellipsis;
