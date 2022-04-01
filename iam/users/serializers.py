@@ -18,9 +18,12 @@ class OrgSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         contact_data = validated_data.pop('contact')
         org = Organization.objects.create(**validated_data)
-        for contact in contact_data:
-            User.objects.create(**contact_data)
+        contact_data.append(org.id)
+        contact = User.objects.create(**contact_data)
         return org
+
+class OrgReadSerializer(OrgSerializer):
+    contact = UserSerializer()
 
     # def to_representation(self, instance):
     #     data = super().to_representation(instance)
