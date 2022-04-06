@@ -141,9 +141,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL='users.User'
 
-LOGIN_URL='/admin/login/'
+LOGIN_URL='/api-auth/login/'
 
-LOGIN_REDIRECT_URL = "dashboard"
+LOGIN_REDIRECT_URL ='/users/'
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
