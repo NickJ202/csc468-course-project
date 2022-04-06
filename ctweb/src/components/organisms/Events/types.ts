@@ -1,3 +1,3 @@
 export interface IProps {
-    handleRedirectCreate: () => void;
+  handleRedirectCreate: () => void;
 }

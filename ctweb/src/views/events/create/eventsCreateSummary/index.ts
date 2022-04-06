@@ -1,1 +1,1 @@
-export {default as EventsCreateSummary} from "./EventsCreateSummary";
+export { default as EventsCreateSummary } from "./EventsCreateSummary";

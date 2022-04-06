@@ -4,11 +4,9 @@ import { EventsCreateStep } from "../../../components/organisms/EventsCreateStep
 import * as U from "../../../urls";
 
 export default function EventsCreateView() {
-    return (
-        <EventsCreateStep
-            continueUrl={U.eventsCreateSummary}
-        >
-            <EventsCreate1 />
-        </EventsCreateStep>
-    );
+  return (
+    <EventsCreateStep continueUrl={U.eventsCreateSummary}>
+      <EventsCreate1 />
+    </EventsCreateStep>
+  );
 }

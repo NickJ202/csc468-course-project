@@ -6,20 +6,20 @@ import { EventCreateCoverPhoto } from "../../molecules/EventCreateCoverPhoto";
 import * as S from "./styles";
 
 export default function EventsCreate1() {
-    return (
-        <S.Wrapper>
-            <S.BasicInfo>
-                <EventCreateBasicInfo/>
-            </S.BasicInfo>
-            <S.TimeFrame>
-                <EventCreateTimeFrame/>
-            </S.TimeFrame>
-            <S.Location>
-                <EventCreateLocation/>
-            </S.Location>
-            <S.CoverPhoto>
-                <EventCreateCoverPhoto/>
-            </S.CoverPhoto>
-        </S.Wrapper>
-    )
+  return (
+    <S.Wrapper>
+      <S.BasicInfo>
+        <EventCreateBasicInfo />
+      </S.BasicInfo>
+      <S.TimeFrame>
+        <EventCreateTimeFrame />
+      </S.TimeFrame>
+      <S.Location>
+        <EventCreateLocation />
+      </S.Location>
+      <S.CoverPhoto>
+        <EventCreateCoverPhoto />
+      </S.CoverPhoto>
+    </S.Wrapper>
+  );
 }

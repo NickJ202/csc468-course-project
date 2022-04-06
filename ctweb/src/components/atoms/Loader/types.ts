@@ -1,3 +1,3 @@
 export interface IProps {
-    alt?: boolean;
+  alt?: boolean;
 }

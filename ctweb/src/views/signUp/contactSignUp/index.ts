@@ -1,1 +1,1 @@
-export {default as ContactSignUp} from "./ContactSignUp";
+export { default as ContactSignUp } from "./ContactSignUp";

@@ -1,1 +1,1 @@
-export {default as EventsCreateConfirmation} from "./EventsCreateConfirmation";
+export { default as EventsCreateConfirmation } from "./EventsCreateConfirmation";

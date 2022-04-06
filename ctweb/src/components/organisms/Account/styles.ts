@@ -8,7 +8,7 @@ export const TabsContainer = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0%);
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     width: 100%;
   }
 `;

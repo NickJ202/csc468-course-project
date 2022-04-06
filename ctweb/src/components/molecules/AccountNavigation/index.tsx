@@ -1,1 +1,1 @@
-export {default as AccountNavigation} from "./AccountNavigation";
+export { default as AccountNavigation } from "./AccountNavigation";

@@ -6,6 +6,7 @@ export const events = `${base}events/`;
 export const eventsCreate = `${events}create/`;
 export const eventsCreateSummary = `${eventsCreate}summary/`;
 export const eventsCreateConfirmation = `${eventsCreate}confirmation/`;
+export const logIn = `${base}login/`;
 export const signUp = `${base}signup/`;
 export const signUpOrganization = `${signUp}organization/`;
 export const signUpContact = `${signUp}contact/`;

@@ -1,1 +1,1 @@
-export {default as URLTabsHandler} from "./URLTabsHandler";
+export { default as URLTabsHandler } from "./URLTabsHandler";

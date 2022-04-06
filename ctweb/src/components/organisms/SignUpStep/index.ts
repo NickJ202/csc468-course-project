@@ -1,1 +1,1 @@
-export {default as SignUpStep} from "./SignUpStep";
+export { default as SignUpStep } from "./SignUpStep";

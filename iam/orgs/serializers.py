@@ -21,10 +21,18 @@ class OrgSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        admin_data = dict(validated_data.pop("admin"))
-        admin = User.objects.create(**admin_data)
+        # user = super().create(validated_data)
+        # user.set_password(validated_data['password'])
+        # user.save()
 
-        validated_data["admin"] = admin
+        # admin_data = dict(validated_data.pop("admin"))
+        admin_data = validated_data.pop('admin')
+
+        admin = User.objects.create(**admin_data)
+        admin.set_password(admin_data['password'])
+        admin.save()
+
+        validated_data['admin'] = admin
         org = Organization.objects.create(**validated_data)
         return org
 

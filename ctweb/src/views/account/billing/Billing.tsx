@@ -1,7 +1,3 @@
 export default function BillingView() {
-    return (
-        <div>
-            billing information
-        </div>
-    )
+  return <div>billing information</div>;
 }

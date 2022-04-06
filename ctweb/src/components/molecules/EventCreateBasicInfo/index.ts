@@ -1,1 +1,1 @@
-export {default as EventCreateBasicInfo} from "./EventCreateBasicInfo";
+export { default as EventCreateBasicInfo } from "./EventCreateBasicInfo";

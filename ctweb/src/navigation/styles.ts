@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 import * as SC from "../styling-config";
-import {openLeft, fadeIn} from "../animations";
+import { openLeft, fadeIn } from "../animations";
 
-import {IStyleProps} from "../types";
+import { IStyleProps } from "../types";
 
 export const NavigationContainer = styled.div`
   position: fixed;
   z-index: 4;
   height: 100%;
   width: ${SC.STYLING.navWidth};
-  background: ${props => props.theme.colors.nav.background.side};
+  background: ${(props) => props.theme.colors.nav.background.side};
 `;
 
 export const NavigationContainerMobile = styled(NavigationContainer)`
@@ -23,7 +23,7 @@ export const HeaderContainer = styled.div`
   z-index: 2;
   height: ${SC.STYLING.navHeight};
   width: 100%;
-  background: ${props => props.theme.colors.nav.background.top};
+  background: ${(props) => props.theme.colors.nav.background.top};
   display: flex;
 `;
 
@@ -32,7 +32,7 @@ export const LogoContainer = styled.div`
   height: ${SC.STYLING.navHeight};
   position: relative;
   &:hover {
-    opacity: 0.75
+    opacity: 0.75;
   }
 `;
 
@@ -55,15 +55,17 @@ export const Icon = styled.div<IStyleProps>`
   svg {
     height: 100%;
     width: 100%;
-    fill: ${props => props.active ?
-    props.theme.colors.nav.icon.active :
-    props.theme.colors.nav.icon.inactive};
+    fill: ${(props) =>
+      props.active
+        ? props.theme.colors.nav.icon.active
+        : props.theme.colors.nav.icon.inactive};
 
     &:hover {
       cursor: pointer;
-      fill: ${props => props.active ?
-    props.theme.colors.nav.icon.active :
-    props.theme.colors.nav.icon.inactive};
+      fill: ${(props) =>
+        props.active
+          ? props.theme.colors.nav.icon.active
+          : props.theme.colors.nav.icon.inactive};
     }
   }
 
@@ -75,8 +77,8 @@ export const Icon = styled.div<IStyleProps>`
 
 export const Name = styled.p`
   width: 40%;
-  color: ${props => props.theme.colors.nav.label};
-  font-weight: ${props => props.theme.typography.boldFontWeight};
+  color: ${(props) => props.theme.colors.nav.label};
+  font-weight: ${(props) => props.theme.typography.boldFontWeight};
   font-size: 20px;
   position: absolute;
   top: 50%;
@@ -90,12 +92,13 @@ export const NavigationLink = styled.a<IStyleProps>`
   height: 100%;
   width: 100%;
   display: block;
-  background: ${props => props.active ?
-    props.theme.colors.nav.background.active :
-    props.theme.colors.transparent};
+  background: ${(props) =>
+    props.active
+      ? props.theme.colors.nav.background.active
+      : props.theme.colors.transparent};
 
   &:hover {
-    background: ${props => props.theme.colors.nav.background.active}
+    background: ${(props) => props.theme.colors.nav.background.active};
   }
 `;
 
@@ -139,7 +142,7 @@ export const Backdrop = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background: ${props => props.theme.colors.backdrop};
+  background: ${(props) => props.theme.colors.backdrop};
   z-index: 3;
 `;
 

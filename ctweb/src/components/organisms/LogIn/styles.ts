@@ -1,0 +1,60 @@
+import styled from "styled-components";
+
+import * as SC from "../../../styling-config";
+
+export const Wrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+`;
+
+export const MainContainer = styled.div`
+    height: auto;
+    width: 450px;
+    max-width: 95vw;
+    background: ${(props) => props.theme.colors.container.primary.background};
+    border: 1px solid ${(props) => props.theme.colors.border.primary};
+    border-radius: 5px;
+    margin: 11.5vh auto 0 auto;
+`;
+
+export const HeaderContainer = styled.div`
+    height: 100px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+`;
+
+export const HeaderLogo = styled.img`
+    width: 150px;
+    max-width: 35%;
+    margin-bottom: 20px;    
+`;
+
+export const Form = styled.div`
+    height: calc(100% - 130px);
+    width: 100%;
+    position: relative;
+    padding: 25px 50px;
+    @media (max-width: ${SC.STYLING.cutoffSecondary}) {
+        padding: 25px;
+      }
+`;
+
+export const FieldContainer = styled.div`
+    margin-bottom: 20px;
+`;
+
+export const UContainer = styled.div`
+    height: 20px;
+    margin-top: 10px;
+`;
+
+export const BottomContainer = styled.div`
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+`;

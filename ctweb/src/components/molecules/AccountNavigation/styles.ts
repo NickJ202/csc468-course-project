@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
-import {IStyleProps} from "../../../types";
+import { IStyleProps } from "../../../types";
 
 export const EmailClosed = styled.button<IStyleProps>`
   height: 100%;
   width: 135px;
   position: relative;
-  background: ${props => props.active ?
-          props.theme.colors.container.primary.hover : props.theme.colors.container.primary.background};
+  background: ${(props) =>
+    props.active
+      ? props.theme.colors.container.primary.hover
+      : props.theme.colors.container.primary.background};
 
   &:hover {
     cursor: pointer;
-    background: ${props => props.theme.colors.container.primary.hover};
+    background: ${(props) => props.theme.colors.container.primary.hover};
   }
 `;
 
@@ -32,31 +34,32 @@ export const Icon = styled.div<IStyleProps>`
   svg {
     height: 100%;
     width: 100%;
-    fill: ${props => props.active ?
-            props.theme.colors.font.active : props.theme.colors.icon.fill};
+    fill: ${(props) =>
+      props.active
+        ? props.theme.colors.font.active
+        : props.theme.colors.icon.fill};
   }
 `;
 
 export const FormattedEmail = styled.p<IStyleProps>`
-  color: ${props => props.active ?
-          props.theme.colors.font.active : props.theme.colors.font.primary};
+  color: ${(props) =>
+    props.active
+      ? props.theme.colors.font.active
+      : props.theme.colors.font.primary};
   margin-top: -2px;
 `;
 
 export const ChevronIcon = styled(Icon)<IStyleProps>`
   margin-top: -1.5px;
-  transform: rotate(${props => props.active ? "180deg" : "0deg"});
+  transform: rotate(${(props) => (props.active ? "180deg" : "0deg")});
 `;
 
 export const AccountBodyContainer = styled.div`
   width: 360px;
-  background: ${props => props.theme.colors.container.primary.background};
+  background: ${(props) => props.theme.colors.container.primary.background};
   position: absolute;
   right: 0;
-  // box-shadow: -2px -2px 2px -1px ${props => props.theme.colors.boxShadow},
-  // -1px 3px 2px -1px ${props => props.theme.colors.boxShadow};
-  // box-shadow: 0 0 4px ${props => props.theme.colors.boxShadow};
-  border: 1px solid ${props => props.theme.colors.border.primary};
+  border: 1px solid ${(props) => props.theme.colors.border.primary};
   padding: 20px;
 `;
 
@@ -78,7 +81,7 @@ export const Email = styled.p`
   max-width: 75%;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  color: ${props => props.theme.colors.font.secondary};
+  color: ${(props) => props.theme.colors.font.secondary};
 `;
 
 export const LinkContainer = styled.li`
@@ -86,8 +89,8 @@ export const LinkContainer = styled.li`
 `;
 
 export const LogOut = styled.button`
-  color: ${props => props.theme.colors.font.active};
-  font-weight: ${props => props.theme.typography.boldFontWeight};
+  color: ${(props) => props.theme.colors.font.active};
+  font-weight: ${(props) => props.theme.typography.boldFontWeight};
   height: auto;
   width: auto;
   cursor: pointer;

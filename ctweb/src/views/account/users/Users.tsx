@@ -1,7 +1,3 @@
 export default function UsersView() {
-    return (
-        <div>
-            users
-        </div>
-    )
+  return <div>users</div>;
 }

@@ -1,49 +1,49 @@
 import React from "react";
 
 export interface IViewProps {
-    setLoading: (status: boolean) => void;
+  setLoading: (status: boolean) => void;
 }
 
 export interface IStyleProps {
-    active?: boolean;
-    disabled?: boolean;
-    completed?: boolean;
+  active?: boolean;
+  disabled?: boolean;
+  completed?: boolean;
 }
 
 export type FormFieldType = {
-    name: string;
-    label: string;
-}
+  name: string;
+  label: string;
+};
 
 export interface ISignUpCollection {
-    org: {
-        fields: FormFieldType[]
-    },
-    contact: {
-        fields: FormFieldType[]
-    }
+  org: {
+    fields: FormFieldType[];
+  };
+  contact: {
+    fields: FormFieldType[];
+  };
 }
 
 export interface ICreateCollection {
-    basicInfo: {
-        fields: FormFieldType[]
-    },
-    address: {
-        fields: FormFieldType[]
-    },
+  basicInfo: {
+    fields: FormFieldType[];
+  };
+  address: {
+    fields: FormFieldType[];
+  };
 }
 
 export type ButtonType = "primary" | "secondary";
 
 export type URLViewType = {
-    index: number;
-    label: string;
-    url: string;
-    view: React.ComponentType;
-}
+  index: number;
+  label: string;
+  url: string;
+  view: React.ComponentType;
+};
 
 export interface IURLView {
-    account: URLViewType[]
+  account: URLViewType[];
 }
 
 export type RefType = { current: HTMLElement };

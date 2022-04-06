@@ -11,33 +11,35 @@ import { registerOrgRequest } from "../../../redux/org/actions";
 import { RootState } from "../../../redux/store";
 
 export default function ContactSignUp() {
-    const dispatch = useDispatch();
-    const orgCreateData = useSelector((state: RootState) => state.orgCreateReducer);
+  const dispatch = useDispatch();
+  const orgCreateData = useSelector(
+    (state: RootState) => state.orgCreateReducer
+  );
 
-    const [loading, setLoading] = React.useState<boolean>(false);
+  const [loading, setLoading] = React.useState<boolean>(false);
 
-    // Make async / await
-    function handleSubmit() {
-        setLoading(true);
-        Promise.all([
-            dispatch(registerOrgRequest(orgCreateData))    
-        ]).then(response => {
-            console.log(response);
-        }).catch(error => {
-            console.log(error);
-        })
-        setLoading(false);
-    }
+  // Make async / await
+  function handleSubmit() {
+    setLoading(true);
+    Promise.all([dispatch(registerOrgRequest(orgCreateData))])
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setLoading(false);
+  }
 
-    return (
-        <SignUpStep
-            title={language.contact}
-            fields={CF.SIGNUP.contact.fields}
-            submitBtnLabel={language.continue}
-            handleSubmit={handleSubmit}
-            loading={loading}
-        >
-            <AdminSignUpForm />
-        </SignUpStep>
-    )
+  return (
+    <SignUpStep
+      title={language.contact}
+      fields={CF.SIGNUP.contact.fields}
+      submitBtnLabel={language.continue}
+      handleSubmit={handleSubmit}
+      loading={loading}
+    >
+      <AdminSignUpForm />
+    </SignUpStep>
+  );
 }

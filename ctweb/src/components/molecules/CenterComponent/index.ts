@@ -1,1 +1,1 @@
-export {default as CenterComponent} from "./CenterComponent";
+export { default as CenterComponent } from "./CenterComponent";

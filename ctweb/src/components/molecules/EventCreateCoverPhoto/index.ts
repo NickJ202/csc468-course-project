@@ -1,1 +1,1 @@
-export {default as EventCreateCoverPhoto} from "./EventCreateCoverPhoto";
+export { default as EventCreateCoverPhoto } from "./EventCreateCoverPhoto";

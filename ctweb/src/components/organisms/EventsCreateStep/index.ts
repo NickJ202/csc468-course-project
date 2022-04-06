@@ -1,1 +1,1 @@
-export {default as EventsCreateStep} from "./EventsCreateStep";
+export { default as EventsCreateStep } from "./EventsCreateStep";

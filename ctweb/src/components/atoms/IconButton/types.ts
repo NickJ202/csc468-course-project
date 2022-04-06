@@ -1,4 +1,4 @@
 export interface IProps {
-    src: string;
-    handlePress: () => void;
+  src: string;
+  handlePress: () => void;
 }

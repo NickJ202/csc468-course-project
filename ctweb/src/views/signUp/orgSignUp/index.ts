@@ -1,1 +1,1 @@
-export {default as OrgSignUp} from "./OrgSignUp";
+export { default as OrgSignUp } from "./OrgSignUp";

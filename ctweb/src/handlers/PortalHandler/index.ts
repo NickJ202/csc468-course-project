@@ -1,1 +1,1 @@
-export {default as PortalHandler} from "./PortalHandler";
+export { default as PortalHandler } from "./PortalHandler";

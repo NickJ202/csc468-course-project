@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 import * as SC from "../styling-config";
 
-export const SignUpView = styled.main`
-  height: 100vh;
+export const AuthView = styled.main`
+  height: auto;
   width: 100vw;
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
+    height: auto;
+  }
 `;
 
 export const Spacer = styled.div`
@@ -74,7 +77,9 @@ export const Portal = styled(HViewSectionEnd)`
 `;
 
 export const BView = styled.div`
-  min-height: calc(100% - ${SC.STYLING.viewHeaderHeight} - ${SC.STYLING.viewHeaderPadding});
+  min-height: calc(
+    100% - ${SC.STYLING.viewHeaderHeight} - ${SC.STYLING.viewHeaderPadding}
+  );
   position: relative;
   @media (max-width: ${SC.STYLING.cutoffSecondary}) {
     min-height: calc(100% - 100px - ${SC.STYLING.viewHeaderPadding});

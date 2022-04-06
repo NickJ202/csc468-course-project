@@ -1,4 +1,4 @@
 export interface IProps {
-    email: string;
-    desktop: boolean;
+  email: string;
+  desktop: boolean;
 }

@@ -1,1 +1,1 @@
-export {default as OuterHandler} from "./OuterHandler";
+export { default as OuterHandler } from "./OuterHandler";

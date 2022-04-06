@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import * as S from "./styles";
 import * as CF from "../../../config";
@@ -8,7 +8,7 @@ import { FormField } from "../../atoms/FormField";
 
 export default function EventCreateLocation() {
   const fields = CF.CREATE.address.fields;
-  
+
   const [address, setAddress] = React.useState<string>("");
   const [city, setCity] = React.useState<string>("");
   const [state, _setState] = React.useState<string>("");

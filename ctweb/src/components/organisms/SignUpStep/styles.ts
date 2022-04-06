@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   width: 1200px;
   max-width: 98.5vw;
   margin: 0 auto;
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     height: auto;
   }
 `;
@@ -39,14 +39,14 @@ export const StepWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 30px 0;
-  background: ${props => props.theme.colors.container.primary.background};
-  border: 1px solid ${props => props.theme.colors.border.primary};
+  background: ${(props) => props.theme.colors.container.primary.background};
+  border: 1px solid ${(props) => props.theme.colors.border.primary};
   border-radius: 5px;
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     flex-direction: column;
     padding: 40px;
   }
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     padding: 20px;
   }
 `;
@@ -55,7 +55,7 @@ export const SubStep = styled.div`
   height: 100%;
   width: 45%;
   position: relative;
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     width: 100%;
   }
 `;
@@ -76,7 +76,7 @@ export const SubmitWrapper = styled.div`
   width: 100%;
   position: absolute;
   bottom: 0;
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     position: relative;
   }
 `;
@@ -94,7 +94,7 @@ export const Children = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     margin: 75px 0;
   }
 `;

@@ -1,7 +1,3 @@
 export default function SettingsView() {
-    return (
-        <div>
-            settings
-        </div>
-    )
+  return <div>settings</div>;
 }

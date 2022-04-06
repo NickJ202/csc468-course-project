@@ -8,10 +8,10 @@ export const Wrapper = styled.div`
   max-width: 640px;
   margin: auto;
   padding-top: 20px;
-  @media(max-width: ${SC.STYLING.cutoffInitial}) {
+  @media (max-width: ${SC.STYLING.cutoffInitial}) {
     width: 75%;
   }
-  @media(max-width: ${SC.STYLING.cutoffSecondary}) {
+  @media (max-width: ${SC.STYLING.cutoffSecondary}) {
     width: 100%;
     max-height: none;
   }

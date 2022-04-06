@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "react-calendar";
 
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
 
 import { FormField } from "../../atoms/FormField";
 import { SectionTitle } from "../../atoms/SectionTitle";
@@ -18,22 +18,21 @@ export default function EventCreateTimeFrame() {
 
   const onDateChange = (date: any) => {
     setCalendarDate(date);
-    let dd = String(date.getDate()).padStart(2, '0');
-    let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let dd = String(date.getDate()).padStart(2, "0");
+    let mm = String(date.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = date.getFullYear();
 
-    let parsedDate = mm + '/' + dd + '/' + yyyy;
+    let parsedDate = mm + "/" + dd + "/" + yyyy;
     console.log(parsedDate);
     if (startDate.length <= 0) {
       setStartDate(parsedDate);
-    }
-    else {
+    } else {
       setEndDate(parsedDate);
     }
-  }
+  };
 
   React.useEffect(() => {
-    console.log()
+    console.log();
   }, []);
 
   return (

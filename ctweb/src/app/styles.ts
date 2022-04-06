@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 import * as SC from "../styling-config";
 
@@ -11,40 +11,40 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: ${props => props.theme.colors.viewBackground};
+    background: ${(props) => props.theme.colors.viewBackground};
   }
 
   h1, h2, h3, h4, h5, h6, a, p, span, li, label {
     margin: 0;
-    color: ${props => props.theme.colors.font.primary};
-    font-weight: ${props => props.theme.typography.regularFontWeight};
+    color: ${(props) => props.theme.colors.font.primary};
+    font-weight: ${(props) => props.theme.typography.regularFontWeight};
     
   }
   
   h1, h2 {
-    font-weight: ${props => props.theme.typography.boldFontWeight};
+    font-weight: ${(props) => props.theme.typography.boldFontWeight};
   }
 
   h1 {
-    font-size: ${props => props.theme.typography.size.h1};
-    color: ${props => props.theme.colors.font.secondary};
+    font-size: ${(props) => props.theme.typography.size.h1};
+    color: ${(props) => props.theme.colors.font.secondary};
   }
 
   h2 {
-    font-size: ${props => props.theme.typography.size.h2};
+    font-size: ${(props) => props.theme.typography.size.h2};
   }
 
   p {
-    font-size: ${props => props.theme.typography.size.base};
+    font-size: ${(props) => props.theme.typography.size.base};
   }
   
   a, span, li, input {
-    font-size: ${props => props.theme.typography.size.small};
+    font-size: ${(props) => props.theme.typography.size.small};
   }
 
   a {
-    color: ${props => props.theme.colors.font.active};
-    font-weight: ${props => props.theme.typography.boldFontWeight};
+    color: ${(props) => props.theme.colors.font.active};
+    font-weight: ${(props) => props.theme.typography.boldFontWeight};
     text-decoration: none;
 
     &:hover {
@@ -53,11 +53,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   b {
-    font-weight: ${props => props.theme.typography.boldFontWeight};
+    font-weight: ${(props) => props.theme.typography.boldFontWeight};
   }
   
   label {
-    font-size: ${props => props.theme.typography.size.xSmall};
+    font-size: ${(props) => props.theme.typography.size.xSmall};
   }
   
   ul, ol {
@@ -67,9 +67,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   input, button, textarea {
-    font-size: ${props => props.theme.typography.size.small};
-    font-weight: ${props => props.theme.typography.boldFontWeight};
-    font-family: ${props => props.theme.typography.fontFamily};
+    font-size: ${(props) => props.theme.typography.size.small};
+    font-weight: ${(props) => props.theme.typography.boldFontWeight};
+    font-family: ${(props) => props.theme.typography.fontFamily};
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -80,7 +80,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: 1px solid ${props => props.theme.colors.border.primary};
+    border: 1px solid ${(props) => props.theme.colors.border.primary};
     height: 42.5px;
     margin: 0;
     padding: 10px;
@@ -97,7 +97,7 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     height: ${SC.STYLING.buttonHeight};
     width: ${SC.STYLING.buttonWidth};
-    background: ${props => props.theme.colors.transparent};
+    background: ${(props) => props.theme.colors.transparent};
     &:hover{
       cursor: pointer;
     }
@@ -111,4 +111,4 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-`
+`;
