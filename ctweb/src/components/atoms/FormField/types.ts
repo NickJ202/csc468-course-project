@@ -7,4 +7,5 @@ export interface IProps {
   type?: "password";
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
+  error?: string | null;
 }

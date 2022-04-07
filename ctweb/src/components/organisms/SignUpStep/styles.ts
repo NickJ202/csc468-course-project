@@ -61,30 +61,42 @@ export const SubStep = styled.div`
 `;
 
 export const FieldsHeader = styled.h1`
-  height: 40px;
+  margin-bottom: 25px;
 `;
 
 export const Fields = styled.div`
-  height: calc(100% - 40px);
+  height: calc(100% - 95px);
+  overflow-y: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-export const SubmitWrapper = styled.div`
+export const LinkContainer = styled.div`
+  height: 30px;
+  margin-top: 9.5px;
+  display: flex;
+  align-items: center;
+`;
+
+export const ActionWrapper = styled.div`
   height: ${SC.STYLING.buttonHeight};
   width: 100%;
   position: absolute;
   bottom: 0;
+  display: flex;
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
     position: relative;
   }
 `;
 
-export const SubmitContainer = styled.div`
+export const ActionContainer = styled.div`
   position: absolute;
   right: 0;
-  bottom: 0;
+`;
+
+export const BackContainer = styled(ActionContainer)`
+  right: 175px;
 `;
 
 export const Children = styled.div`

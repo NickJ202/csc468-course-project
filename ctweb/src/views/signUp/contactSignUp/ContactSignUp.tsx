@@ -35,9 +35,10 @@ export default function ContactSignUp() {
     <SignUpStep
       title={language.contact}
       fields={CF.SIGNUP.contact.fields}
-      submitBtnLabel={language.continue}
+      submitBtnLabel={language.submit}
       handleSubmit={handleSubmit}
       loading={loading}
+      backButton
     >
       <AdminSignUpForm />
     </SignUpStep>

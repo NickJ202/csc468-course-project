@@ -8,6 +8,7 @@ export interface IProps {
   handleSubmit: (formState: any) => void;
   loading: boolean;
   children: React.ReactNode;
+  backButton?: boolean;
 }
 
 interface IValue {

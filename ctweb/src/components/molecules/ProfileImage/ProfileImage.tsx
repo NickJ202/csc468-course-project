@@ -14,14 +14,14 @@ export default function ProfileImage() {
           <Button
             formSubmit={false}
             label={language.upload}
-            disabled={false}
+            disabled={true}
             type={"primary"}
             handlePress={() => console.log("handle upload")}
           />
           <Button
             formSubmit={false}
             label={language.edit}
-            disabled={false}
+            disabled={true}
             type={"secondary"}
             handlePress={() => console.log("handle edit")}
           />

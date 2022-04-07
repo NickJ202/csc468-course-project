@@ -17,7 +17,9 @@ declare module "styled-components" {
         };
         secondary: {
           background: string;
+          disabled: string,
           label: string;
+          labelDisabled: string;
           hover: string;
         };
       };

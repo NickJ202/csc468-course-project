@@ -28,7 +28,9 @@ export const theme: DefaultTheme = {
       },
       secondary: {
         background: THEME.default.white,
+        disabled: THEME.default.offWhite,
         label: THEME.default.blue,
+        labelDisabled: "#CACACA",
         hover: THEME.default.offWhite,
       },
     },

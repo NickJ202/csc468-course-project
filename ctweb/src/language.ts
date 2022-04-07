@@ -17,16 +17,18 @@ export const language: ILanguage = {
     },
   },
   adminSignUpInfo:
-    "Please enter your email and create a password, this will be the administrative user of the system",
+    "Please enter your email and create a password, this will be the administrative user of the system.",
+  alreadyHaveAccount: "Aready have an account ? Log in here",
   back: "Back",
   contact: "Contact",
   continue: "Continue",
   create: "Create",
   edit: "Edit",
+  enterValidEmail: "Please enter a valid email",
   events: {
     confirm: {
       title: "This event has been published",
-      info: "A confirmation will be sent to your email regarding your value contribution when it has been processed",
+      info: "A confirmation will be sent to your email regarding your value contribution when it has been processed.",
     },
     title: "Events",
     createFirst: "Create your first event",
@@ -58,6 +60,7 @@ export const language: ILanguage = {
       country: "Country",
     },
   },
+  logIn: "Log in",
   logInHeader: "Welcome Back!",
   logInInfo: "Login information",
   logOut: "Log out",
@@ -68,6 +71,7 @@ export const language: ILanguage = {
   },
   publish: "Publish",
   return: "Return",
+  submit: "Submit",
   auth: {
     org: {
       fields: {

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import logo from "../../../assets/logo-title-primary.png";
@@ -8,12 +9,15 @@ import { FormField } from "../../atoms/FormField";
 
 import { storePartialOrg } from "../../../redux/org/actions";
 
+import * as U from "../../../urls";
+import { language } from "../../../language";
 import { IProps, IFields } from "./types";
 import * as S from "./styles";
 
 import { RootState } from "../../../redux/store";
 
 export default function SignUpStep(props: IProps) {
+  const history = useHistory();
   const dispatch = useDispatch();
   const orgCreateData = useSelector(
     (state: RootState) => state.orgCreateReducer
@@ -73,13 +77,29 @@ export default function SignUpStep(props: IProps) {
                   );
                 })}
               </S.Fields>
+              <S.LinkContainer>
+                <a href={U.logIn}>{language.alreadyHaveAccount}</a>
+              </S.LinkContainer>
             </S.SubStep>
             <S.SubStep>
               <S.Children>
                 <S.ChildContainer>{props.children}</S.ChildContainer>
               </S.Children>
-              <S.SubmitWrapper>
-                <S.SubmitContainer>
+              <S.ActionWrapper>
+                <S.BackContainer>
+                  {
+                    props.backButton &&
+                    <Button
+                      formSubmit={false}
+                      label={language.back}
+                      disabled={props.loading}
+                      loading={false}
+                      type={"secondary"}
+                      handlePress={() => history.goBack()}
+                    />
+                  }
+                </S.BackContainer>
+                <S.ActionContainer>
                   <Button
                     formSubmit={true}
                     label={props.submitBtnLabel}
@@ -88,8 +108,8 @@ export default function SignUpStep(props: IProps) {
                     type={"primary"}
                     handlePress={(e: React.SyntheticEvent) => handleSubmit(e)}
                   />
-                </S.SubmitContainer>
-              </S.SubmitWrapper>
+                </S.ActionContainer>
+              </S.ActionWrapper>
             </S.SubStep>
           </S.StepWrapper>
         </S.Form>

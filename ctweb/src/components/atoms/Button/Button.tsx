@@ -6,6 +6,7 @@ import { Loader } from "../Loader";
 export default function Button(props: IProps) {
   const buttonStyle = getType();
   const StyledButton = buttonStyle.wrapper;
+  
   function getType() {
     let buttonObj: {
       wrapper: any;

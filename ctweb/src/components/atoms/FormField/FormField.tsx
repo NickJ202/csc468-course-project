@@ -13,6 +13,11 @@ export default function FormField(props: IProps) {
         invalid={false}
         placeholder={props.placeholder ? props.placeholder : ""}
       />
+      <S.ErrorContainer>
+        {
+          props.error && <S.Error>{props.error}</S.Error>
+        }
+      </S.ErrorContainer>
     </S.Wrapper>
   );
 }

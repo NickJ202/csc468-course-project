@@ -101,6 +101,9 @@ export const GlobalStyle = createGlobalStyle`
     &:hover{
       cursor: pointer;
     }
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   * {

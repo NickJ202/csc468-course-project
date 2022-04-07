@@ -33,7 +33,7 @@ export const HeaderLogo = styled.img`
     margin-bottom: 20px;    
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
     height: calc(100% - 130px);
     width: 100%;
     position: relative;
@@ -47,14 +47,22 @@ export const FieldContainer = styled.div`
     margin-bottom: 20px;
 `;
 
-export const UContainer = styled.div`
-    height: 20px;
-    margin-top: 10px;
-`;
-
 export const BottomContainer = styled.div`
     width: 100%;
-    margin-top: 25px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    height: ${SC.STYLING.buttonHeight};
+`;
+
+export const SubmitContainer = styled.div`
+    position: absolute;
+    right: 0;
+`;
+
+export const LinkContainer = styled.div`
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 `;

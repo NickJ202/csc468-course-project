@@ -17,7 +17,7 @@ export const Content = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  margin: 10px 0 20px 0;
+  margin: 25px 0 20px 0;
 `;
 
 export const PContent = styled.div`

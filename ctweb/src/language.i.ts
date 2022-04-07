@@ -12,11 +12,13 @@ export interface ILanguage {
     };
   };
   adminSignUpInfo: string;
+  alreadyHaveAccount: string;
   back: string;
   contact: string;
   continue: string;
   create: string;
   edit: string;
+  enterValidEmail: string;
   events: {
     confirm: {
       title: string;
@@ -52,6 +54,7 @@ export interface ILanguage {
       country: string;
     };
   };
+  logIn: string;
   logInHeader: string;
   logInInfo: string;
   logOut: string;
@@ -62,6 +65,7 @@ export interface ILanguage {
   };
   publish: string;
   return: string;
+  submit: string;
   auth: {
     org: {
       fields: {
