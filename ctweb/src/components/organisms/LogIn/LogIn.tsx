@@ -81,6 +81,9 @@ export default function LogIn(props: IProps) {
                             }
                         />
                     </S.FieldContainer>
+                    <S.ErrorContainer>
+                        {props.error && <S.Error>{props.error}</S.Error>}
+                    </S.ErrorContainer>
                     <S.BottomContainer>
                         <S.LinkContainer>
                             <a href={U.signUp}>Create Account</a>

@@ -29,22 +29,6 @@ export default function EventCreateLocation() {
         <S.RowContainer>
           <S.HalfField>
             <FormField
-              label={fields[2].label}
-              value={state}
-              onChange={(e) => _setState(e.target.value)}
-            />
-          </S.HalfField>
-          <S.HalfField>
-            <FormField
-              label={fields[4].label}
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-            />
-          </S.HalfField>
-        </S.RowContainer>
-        <S.RowContainer>
-          <S.HalfField>
-            <FormField
               label={fields[1].label}
               value={city}
               onChange={(e) => setCity(e.target.value)}
@@ -52,9 +36,25 @@ export default function EventCreateLocation() {
           </S.HalfField>
           <S.HalfField>
             <FormField
+              label={fields[2].label}
+              value={state}
+              onChange={(e) => _setState(e.target.value)}
+            />
+          </S.HalfField>
+        </S.RowContainer>
+        <S.RowContainer>
+          <S.HalfField>
+            <FormField
               label={fields[3].label}
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
+            />
+          </S.HalfField>
+          <S.HalfField>
+            <FormField
+              label={fields[4].label}
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
             />
           </S.HalfField>
         </S.RowContainer>

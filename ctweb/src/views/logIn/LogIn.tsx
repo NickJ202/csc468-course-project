@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { LogIn } from "../../components/organisms/LogIn"
 
@@ -7,14 +7,11 @@ import * as http from "../../http-services";
 import * as CF from "../../config";
 
 import { setAuth } from "../../redux/auth/actions";
-import { RootState } from "../../redux/store";
 
 export default function LogInView() {
     const dispatch = useDispatch();
-    const authData = useSelector(
-        (state: RootState) => state.authReducer
-    );
     const [loading, setLoading] = React.useState<boolean>(false);
+    const [error, setError] = React.useState<string | null>(null);
 
     async function handleSubmit(email: string, password: string) {
         setLoading(true);
@@ -31,16 +28,15 @@ export default function LogInView() {
             ));
             
         }).catch((error) => {
-            console.log(error)
+            setError(error.response.data['non_field_errors'][0]);
         });
         setLoading(false);
     }
 
-    console.log(authData.token);
-
     return <LogIn
         loading={loading}
         handleSubmit={(email: string, password: string) => handleSubmit(email, password)}
+        error={error}
     />
 
 }

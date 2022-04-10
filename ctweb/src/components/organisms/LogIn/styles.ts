@@ -47,9 +47,21 @@ export const FieldContainer = styled.div`
     margin-bottom: 20px;
 `;
 
+export const ErrorContainer = styled.div`
+    height: 20px;
+    color: ${(props) => props.theme.colors.font.invalid};
+`;
+
+export const Error = styled.span`
+  font-size: ${(props) => props.theme.typography.size.xSmall};
+  border-left: 3.5px solid ${(props) => props.theme.colors.font.invalid};
+  padding-left: 5px;
+`;
+
+
 export const BottomContainer = styled.div`
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     position: relative;

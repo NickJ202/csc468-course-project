@@ -37,6 +37,6 @@ export const ErrorContainer = styled.div`
 
 export const Error = styled.span`
   font-size: ${(props) => props.theme.typography.size.xSmall};
-  border-left: 3.5px solid ${(props) => props.theme.colors.form.invalid.outline};
+  border-left: 3.5px solid ${(props) => props.theme.colors.font.invalid};
   padding-left: 5px;
 `;

@@ -36,6 +36,7 @@ declare module "styled-components" {
         active: string;
         primary: string;
         secondary: string;
+        invalid: string,
         alt: {
           primary: string;
         };

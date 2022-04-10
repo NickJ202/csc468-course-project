@@ -9,6 +9,7 @@ const THEME = {
     jet: "#353137",
     offWhite: "#FAFAFA",
     white: "#FFFFFF",
+    red: "#FF0A47"
   },
 };
 
@@ -47,6 +48,7 @@ export const theme: DefaultTheme = {
       active: THEME.default.blue,
       primary: THEME.default.gray,
       secondary: THEME.default.black,
+      invalid: THEME.default.red,
       alt: {
         primary: THEME.default.white,
       },
@@ -57,7 +59,7 @@ export const theme: DefaultTheme = {
         shadow: "#BCDBFD",
       },
       invalid: {
-        outline: "#FF0A47",
+        outline: THEME.default.red,
         shadow: "#FFD5E0",
       },
     },

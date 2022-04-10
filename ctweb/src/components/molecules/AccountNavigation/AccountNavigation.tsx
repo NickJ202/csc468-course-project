@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { ReactSVG } from "react-svg";
 
@@ -15,16 +16,19 @@ import { language } from "../../../language";
 import * as S from "./styles";
 import { IProps } from "./types";
 
+import * as U from "../../../urls";
 import { clearAuth } from "../../../redux/auth/actions";
 
 // import * as C from "../../../config";
 
 export default function AccountNavigation(props: IProps) {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [active, setActive] = React.useState(false);
 
   function handleLogout() {
     dispatch(clearAuth());
+    history.push(U.base);
   }
 
   return (

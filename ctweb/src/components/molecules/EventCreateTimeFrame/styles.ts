@@ -44,14 +44,14 @@ export const Button = styled.button`
 export const Calendar = styled.div`
   width: 350px;
   margin: 10px 0 0 auto;
-  // @media (max-width: ${SC.STYLING.cutoffSecondary}) {
-  //   margin: auto;
-  // }
+  @media (max-width: ${SC.STYLING.cutoffSecondary}) {
+    width: 100%;
+    margin: auto;
+  }
 
   .react-calendar {
     width: 100%;
-    background: white;
-    border: 1px solid #a0a096;
+    background: transparent;
     line-height: 1.125em;
   }
   .react-calendar--doubleView .react-calendar__viewContainer {
@@ -74,6 +74,7 @@ export const Calendar = styled.div`
     margin: 0;
     border: 0;
     outline: none;
+    height: 36.5px;
   }
   .react-calendar button:enabled:hover {
     cursor: pointer;
@@ -81,10 +82,11 @@ export const Calendar = styled.div`
   .react-calendar__navigation {
     height: 44px;
     margin-bottom: 1em;
+    display: flex;
   }
   .react-calendar__navigation button {
-    min-width: 44px;
     background: none;
+    padding: 0 20px;
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
@@ -110,7 +112,7 @@ export const Calendar = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 0.75em;
-    padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
+    padding: 10px;
   }
   .react-calendar__month-view__days__day--weekend {
     color: #d10000;
@@ -121,7 +123,7 @@ export const Calendar = styled.div`
   .react-calendar__year-view .react-calendar__tile,
   .react-calendar__decade-view .react-calendar__tile,
   .react-calendar__century-view .react-calendar__tile {
-    padding: 2em 0.5em;
+    padding: 1em 0.5em 2em 0.5em;
   }
   .react-calendar__tile {
     max-width: 100%;

@@ -25,13 +25,15 @@ export const Section1 = styled(Section)`
   padding-right: 25px;
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
     padding-right: 0;
+    margin-bottom: 50px;
   }
 `;
 
 export const Section2 = styled(Section)`
   padding: 0 25px;
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
-    padding-left: 0;
+    padding: 0;
+    margin-bottom: 50px;
   }
 `;
 
