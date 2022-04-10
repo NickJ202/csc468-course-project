@@ -10,19 +10,19 @@ import { validateEmail } from "../../../validations";
 import { language } from "../../../language";
 import * as U from "../../../urls";
 import * as S from "./styles";
+import { IProps } from "./types";
 
-export default function LogIn() {
+export default function LogIn(props: IProps) {
     const [email, setEmail] = React.useState<string | null>(null);
     const [password, setPassword] = React.useState<string | null>(null);
 
     const [invalidEmail, setInvalidEmail] = React.useState<string | null>(null);
-    const [loading, setLoading] = React.useState<boolean>(false);
 
     function handleSubmit(e: React.SyntheticEvent) {
         e.preventDefault();
-        setLoading(true);
-        console.log(email);
-        console.log(password);
+        if (email && password) {
+            props.handleSubmit(email, password);
+        }
     }
 
     React.useEffect(() => {
@@ -89,8 +89,8 @@ export default function LogIn() {
                             <Button
                                 formSubmit={true}
                                 label={language.logIn}
-                                disabled={checkSubmitDisabled() || loading}
-                                loading={loading}
+                                disabled={checkSubmitDisabled() || props.loading}
+                                loading={props.loading}
                                 type={"primary"}
                                 handlePress={(e: React.SyntheticEvent) => handleSubmit(e)}
                             />

@@ -21,13 +21,8 @@ class OrgSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        # user = super().create(validated_data)
-        # user.set_password(validated_data['password'])
-        # user.save()
-
-        # admin_data = dict(validated_data.pop("admin"))
         admin_data = validated_data.pop('admin')
-
+        admin_data['is_active'] = True
         admin = User.objects.create(**admin_data)
         admin.set_password(admin_data['password'])
         admin.save()

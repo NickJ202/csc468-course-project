@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { FormField } from "../../atoms/FormField";
 
-import * as S from "./styles";
+import { validateEmail } from "../../../validations";
 
 import { language } from "../../../language";
+import * as S from "./styles";
 
 import { storePartialOrg } from "../../../redux/org/actions";
 import { RootState } from "../../../redux/store";
@@ -24,16 +25,32 @@ export default function AdminSignUpForm() {
   const [passwordConfirm, setPasswordConfirm] = React.useState<string | null>(
     null
   );
+
+  const [invalidEmail, setInvalidEmail] = React.useState<string | null>(null);
+
   React.useEffect(() => {
-    if (email && password) {
+    // const validEmail = email && email.length > 0 && validateEmail(email);
+    if (email && email.length > 0 && !validateEmail(email)) {
+      setInvalidEmail(language.enterValidEmail);
+    }
+    else {
+      setInvalidEmail(null);
       dispatch(
         storePartialOrg({
           email: email,
           password: password,
         })
       );
+      // if (validEmail && password && passwordConfirm) {
+      //   if (password === passwordConfirm) {
+          
+      //   }
+      //   else {
+      //     alert("Passwords dont match")
+      //   }
+      // }
     }
-  }, [email, password, dispatch]);
+  }, [email, password, passwordConfirm, dispatch]);
   return (
     <S.Wrapper>
       <S.Title>{language.logInInfo}</S.Title>
@@ -44,6 +61,7 @@ export default function AdminSignUpForm() {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
           }
+          error={invalidEmail}
         />
         <S.PContent>
           <FormField

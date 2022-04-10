@@ -18,7 +18,7 @@ import { NotFound } from "../views/notFound";
 export default function Routes(props: { authenticated: boolean }) {
   return props.authenticated ? (
     <Switch>
-      <Route exact path={U.base}>
+      <Route exact path={[U.base, U.logIn]}>
         <Redirect to={U.events} />
       </Route>
       <Route exact path={U.events} render={() => <View view={Events} />} />
@@ -46,7 +46,7 @@ export default function Routes(props: { authenticated: boolean }) {
     </Switch>
   ) : (
     <Switch>
-      <Route exact path={U.base}>
+      <Route exact path={[U.base, U.events]}>
         <Redirect to={U.logIn} />
       </Route>
       <Route

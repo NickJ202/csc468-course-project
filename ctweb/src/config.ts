@@ -10,19 +10,9 @@ import * as U from "./urls";
 const API_URI = process.env.REACT_APP_API_URI;
 
 export const ORG_ENDPOINT = API_URI + "orgs/";
-const AUTH_URI = process.env.REACT_APP_AUTH_URI;
-const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 
-export const OAUTH = {
-  authorizationEndpoint: AUTH_URI + "authorize",
-  clientID: "cgauth",
-  redirectURI: REDIRECT_URI + "events/",
-  requestedScopes: "openid",
-  tokenEndpoint: AUTH_URI + "token",
-  authStorageString: "user",
-  pkceCodeVerifier: "pkce_code_verifier",
-  pkceState: "pkce_state",
-};
+const AUTH_ENDPOINT = API_URI + "users/";
+export const TOKEN_ENDPOINT = AUTH_ENDPOINT + "api-token-auth/";
 
 export const DOM = {
   viewHeader: "view-header",

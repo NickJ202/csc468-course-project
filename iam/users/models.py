@@ -28,6 +28,7 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError(trans('Please provide an email address'))
 
+        other_fields.setdefault('is_active', True)
         email = self.normalize_email(email)  # normalize_email lowercases the domain part of email
         user = self.model(email=email, **other_fields)
 

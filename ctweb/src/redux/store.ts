@@ -4,6 +4,7 @@ import { createLogger } from "redux-logger";
 import storage from "redux-persist/lib/storage/session";
 import { persistStore, persistReducer } from "redux-persist";
 
+import authReducer from "./auth/reducers";
 import orgCreateReducer from "./org/reducers";
 import eventCreateReducer from "./events/reducers";
 
@@ -13,6 +14,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  authReducer,
   orgCreateReducer,
   eventCreateReducer,
 });

@@ -1,5 +1,4 @@
 import * as SC from "./styling-config";
-import * as C from "./config";
 import * as U from "./urls";
 
 export function checkDesktop(): boolean {
@@ -32,14 +31,7 @@ export function formatCapitalize(text: string) {
   ).replaceAll("/", "");
 }
 
-export function handleLogout() {
-  localStorage.removeItem(C.OAUTH.authStorageString);
-  localStorage.removeItem(C.OAUTH.pkceCodeVerifier);
-  localStorage.removeItem(C.OAUTH.pkceState);
-  window.location.reload();
-}
-
-export function convertSnake(obj: any) {
+export function camelToSnake(obj: any) {
   if (typeof obj !== "object") return obj;
   for (let o in obj) {
     let n = o.replace(/([A-Z0-9])/g, function ($1) {
@@ -52,7 +44,27 @@ export function convertSnake(obj: any) {
       }
     }
     if (typeof obj[n] == "object") {
-      obj[n] = convertSnake(obj[n]);
+      obj[n] = camelToSnake(obj[n]);
+    }
+  }
+  return obj;
+}
+
+export function snakeToCamel(obj: any) {
+  if (typeof obj !== "object") return obj;
+  for (let o in obj) {
+    let n = o.replace(/([_][a-z0-9])/ig, function ($1) {
+      return $1.toUpperCase()
+        .replace("_", "");
+    });
+    if (n !== o) {
+      if (obj.hasOwnProperty(o)) {
+        obj[n] = obj[o];
+        delete obj[o];
+      }
+    }
+    if (typeof obj[n] == "object") {
+      obj[n] = snakeToCamel(obj[n]);
     }
   }
   return obj;

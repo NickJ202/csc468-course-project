@@ -19,35 +19,45 @@ export default function EventCreateLocation() {
     <S.Wrapper>
       <SectionTitle header={language.location.header} />
       <S.FlexContainer>
-        <S.Column>
+        <S.FullField>
           <FormField
             label={fields[0].label}
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-          <FormField
-            label={fields[2].label}
-            value={state}
-            onChange={(e) => _setState(e.target.value)}
-          />
-          <FormField
-            label={fields[4].label}
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-          />
-        </S.Column>
-        <S.PColumn>
-          <FormField
-            label={fields[1].label}
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <FormField
-            label={fields[3].label}
-            value={postalCode}
-            onChange={(e) => setPostalCode(e.target.value)}
-          />
-        </S.PColumn>
+        </S.FullField>
+        <S.RowContainer>
+          <S.HalfField>
+            <FormField
+              label={fields[2].label}
+              value={state}
+              onChange={(e) => _setState(e.target.value)}
+            />
+          </S.HalfField>
+          <S.HalfField>
+            <FormField
+              label={fields[4].label}
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            />
+          </S.HalfField>
+        </S.RowContainer>
+        <S.RowContainer>
+          <S.HalfField>
+            <FormField
+              label={fields[1].label}
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+          </S.HalfField>
+          <S.HalfField>
+            <FormField
+              label={fields[3].label}
+              value={postalCode}
+              onChange={(e) => setPostalCode(e.target.value)}
+            />
+          </S.HalfField>
+        </S.RowContainer>
       </S.FlexContainer>
     </S.Wrapper>
   );

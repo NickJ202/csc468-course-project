@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { ReactSVG } from "react-svg";
 
 import { IconButton } from "../components/atoms/IconButton";
@@ -9,11 +10,13 @@ import logo from "../assets/logo-primary.png";
 import logoMobile from "../assets/logo-title-alt.png";
 import menu from "../assets/menu.svg";
 import events from "../assets/events.svg";
-import account from "../assets/account.svg";
+// import account from "../assets/account.svg";
 
 import * as S from "./styles";
 import { IProps } from "./types";
 import * as U from "../urls";
+
+import { RootState } from "../redux/store";
 
 import {
   checkCurrentPath,
@@ -43,6 +46,9 @@ function NavigationElement(props: IProps) {
 }
 
 export default function Navigation() {
+  const authData = useSelector(
+    (state: RootState) => state.authReducer
+  );
   const [open, setOpen] = React.useState(checkDesktop());
   const [desktop, setDesktop] = React.useState(checkDesktop());
 
@@ -83,7 +89,7 @@ export default function Navigation() {
         <S.AccountNavigationContainer>
           <AccountNavigation
             desktop={desktop}
-            email={"nickjuliano20@gmail.com"}
+            email={authData ? authData.email : "NaN"}
           />
         </S.AccountNavigationContainer>
       </S.HeaderContainer>
@@ -108,14 +114,14 @@ export default function Navigation() {
                 />
               </S.ElementContainer>
 
-              <S.FooterContainer>
+              {/* <S.FooterContainer>
                 <NavigationElement
                   href={U.account}
                   src={account}
                   name={formatCapitalize(U.account)}
                   desktop={desktop}
                 />
-              </S.FooterContainer>
+              </S.FooterContainer> */}
             </S.ElementsContainer>
           </NavigationContainer>
         </>

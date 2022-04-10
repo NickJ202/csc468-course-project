@@ -1,7 +1,7 @@
 import * as C from "./constants";
 import { OrgActionType } from "./types";
 
-// Should be OrgType workaround to nest objects
+// State Should be OrgType workaround to nest objects
 export const initialState: any = {
   name: null,
   address1: null,
@@ -18,7 +18,7 @@ export const initialState: any = {
   },
 };
 
-// Should be OrgType workaround to nest objects
+// State Should be OrgType workaround to nest objects
 export default function orgCreateReducer(
   state: any = initialState,
   action: OrgActionType

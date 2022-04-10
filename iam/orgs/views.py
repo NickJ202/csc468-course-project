@@ -7,6 +7,7 @@ from .serializers import OrgSerializer
 class OrgListView(generics.ListCreateAPIView):
     queryset = Organization.objects.all()
     serializer_class = OrgSerializer
+
     # get_serializer_class = OrgReadSerializer
 
     # def post(self, request, *args, **kwargs):

@@ -46,7 +46,6 @@ export const FormattedEmail = styled.p<IStyleProps>`
     props.active
       ? props.theme.colors.font.active
       : props.theme.colors.font.primary};
-  margin-top: -2px;
 `;
 
 export const ChevronIcon = styled(Icon)<IStyleProps>`
@@ -68,6 +67,7 @@ export const BodyTopContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const BodyBottomContainer = styled.div`

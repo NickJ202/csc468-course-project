@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { Dispatch } from "redux";
 
-import { post } from "../services";
+import * as http from "../../http-services";
 import * as C from "./constants";
 import * as CF from "../../config";
 import * as T from "./types";
@@ -19,7 +19,7 @@ export function storePartialOrg(
 
 export function registerOrgRequest(payload: T.OrgType) {
   return (dispatch: Dispatch) =>
-    post(CF.ORG_ENDPOINT, payload).then((response) => {
+    http.post(CF.ORG_ENDPOINT, payload).then((response: AxiosResponse) => {
       dispatch(registerOrgSuccess(response));
     });
 }
