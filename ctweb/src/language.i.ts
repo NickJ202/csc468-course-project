@@ -19,6 +19,7 @@ export interface ILanguage {
   create: string;
   edit: string;
   enterValidEmail: string;
+  errorOccurred: string;
   events: {
     confirm: {
       title: string;

@@ -25,6 +25,7 @@ export const language: ILanguage = {
   create: "Create",
   edit: "Edit",
   enterValidEmail: "Please enter a valid email",
+  errorOccurred: "Error Occurred",
   events: {
     confirm: {
       title: "This event has been published",

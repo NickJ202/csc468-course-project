@@ -5,6 +5,7 @@ import { LogIn } from "../../components/organisms/LogIn"
 
 import * as http from "../../http-services";
 import * as CF from "../../config";
+import { language } from '../../language';
 
 import { setAuth } from "../../redux/auth/actions";
 
@@ -26,9 +27,11 @@ export default function LogInView() {
                     email: response.data.email
                 }
             ));
-            
+
         }).catch((error) => {
-            setError(error.response.data['non_field_errors'][0]);
+            setError(error.response ?
+                error.response.data['non_field_errors'][0] : language.errorOccurred
+            );
         });
         setLoading(false);
     }

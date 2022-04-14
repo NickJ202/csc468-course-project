@@ -1,0 +1,1 @@
+export { default as SignUp_FullName_2 } from './SignUp_FullName_2';

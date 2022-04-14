@@ -1,0 +1,1 @@
+export { default as EventRedeem } from './EventRedeem';
