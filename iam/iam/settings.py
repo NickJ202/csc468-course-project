@@ -95,10 +95,10 @@ WSGI_APPLICATION = 'iam.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'centigro',
-        'USER': 'centigrouser',
-        'PASSWORD': '42qG&80t$k@TF%',
-        'HOST': '127.0.0.1',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
