@@ -1,0 +1,29 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ctweb
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      nodePort: 31000
+  selector:
+    app: ctweb
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: iam
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      nodePort: 31000
+  selector:
+    app: iam
