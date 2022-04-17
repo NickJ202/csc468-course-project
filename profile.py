@@ -43,10 +43,6 @@ for i in range(num_nodes):
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/install_kubernetes.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo swapoff -a"))
     node.addService(pg.Execute(shell="/bin/sh", command="sudo apt update"))
-    # install apache
-    node.addService(pg.Execute(shell="/bin/sh", command="sudo apt install -y apache2"))
-    node.addService(pg.Execute(shell="/bin/sh", command='sudo systemctl status apache2'))
-
     if i == 0:
         node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/kube_manager.sh"))
     else:
