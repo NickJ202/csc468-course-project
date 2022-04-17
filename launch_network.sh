@@ -17,10 +17,10 @@ echo "Creating namespace ramcoin"
 kubectl create namespace centigro 
  
 echo "Creating pods"
-kubectl create -f ramcoin.yaml --namespace centigro
+kubectl create -f deployment.yaml --namespace centigro
 
 echo "Creating services"
-kubectl create -f ramcoin-service.yaml --namespace centigro
+kubectl create -f service.yaml --namespace centigro
 
 
 kubectl get pods -n centigro
