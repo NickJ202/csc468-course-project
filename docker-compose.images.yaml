@@ -28,7 +28,7 @@ services:
   
   web:
     container_name: web
-    build: ./web
+    build: ./ctweb
     ports:
       - '8080:80'
 
