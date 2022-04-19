@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ctweb
-          image: nickj202/ctweb_centigro-prod
+          image: manalaro1/ctweb
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -25,20 +25,20 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: iam
+  name: ctapi
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: iam
+      app: ctapi
   template:
     metadata:
       labels:
-        app: iam
+        app: ctapi
     spec:
       containers:
-        - name: iam
-          image: nickj202/iam
+        - name: ctapi
+          image: manalaro1/ctapi
           imagePullPolicy: Always
           ports:
             - containerPort: 80

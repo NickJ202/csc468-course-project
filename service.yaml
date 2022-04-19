@@ -17,7 +17,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: iam
+  name: ctapi
 spec:
   type: NodePort
   ports:
@@ -26,4 +26,4 @@ spec:
       protocol: TCP
       nodePort: 32000
   selector:
-    app: iam
+    app: ctapi
