@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   db:
+    platform: linux/amd64
     image: postgres
     ports:
       - "5432"
@@ -12,6 +13,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   api:
+    platform: linux/amd64
     container_name: api
     build: ./iam
     command: python manage.py runserver 0.0.0.0:8000
@@ -27,6 +29,7 @@ services:
       - db
   
   web:
+    platform: linux/amd64
     container_name: web
     build: ./ctweb
     ports:

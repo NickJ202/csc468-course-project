@@ -1,5 +1,5 @@
 # Pull official base image
-FROM python:3
+FROM --platform=linux/amd64 python:3
 
 # Set working directory
 WORKDIR /code/
