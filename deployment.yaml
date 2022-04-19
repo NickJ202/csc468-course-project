@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: ctweb
+  name: web
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ctweb
+      app: web
   template:
     metadata:
       labels:
-        app: ctweb
+        app: web
     spec:
       containers:
-        - name: ctweb
-          image: manalaro1/ctweb
+        - name: web
+          image: manalaro1/web
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -25,20 +25,20 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: ctapi
+  name: api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ctapi
+      app: api
   template:
     metadata:
       labels:
-        app: ctapi
+        app: api
     spec:
       containers:
-        - name: ctapi
-          image: manalaro1/ctapi
+        - name: api
+          image: manalaro1/api
           imagePullPolicy: Always
           ports:
             - containerPort: 80

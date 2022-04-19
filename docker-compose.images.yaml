@@ -12,6 +12,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   api:
+    container_name: api
     build: ./iam
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
@@ -26,10 +27,8 @@ services:
       - db
   
   web:
-    container_name: ctweb
-    build: ./ctweb
-      # context: ./ctweb
-      # dockerfile: ./ctweb/Dockerfile
+    container_name: web
+    build: ./web
     ports:
       - '8080:80'
 

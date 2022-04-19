@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: ctweb
+  name: web
 spec:
   type: NodePort
   ports:
@@ -10,14 +10,14 @@ spec:
       protocol: TCP
       nodePort: 31000
   selector:
-    app: ctweb
+    app: web
 
 ---
 
 kind: Service
 apiVersion: v1
 metadata:
-  name: ctapi
+  name: api
 spec:
   type: NodePort
   ports:
@@ -26,4 +26,4 @@ spec:
       protocol: TCP
       nodePort: 32000
   selector:
-    app: ctapi
+    app: api
