@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'iam.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': 'postgresdb',
+        'USER': 'postgresadmin',
+        'PASSWORD': 'admin123',
         'HOST': 'db',
         'PORT': '5432',
     }
