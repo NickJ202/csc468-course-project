@@ -50,10 +50,10 @@ spec:
               name: postgres-pv
       volumes:
         - name: postgres-pv
-          # persistentVolumeClaim:
-          #   claimName: postgres-pv-claim
-          hostPath: 
-            path: /var/lib/postgresql/data
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
+          # hostPath: 
+          #   path: /var/lib/postgresql/data
 
 ---
 
