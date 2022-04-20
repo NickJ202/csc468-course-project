@@ -26,7 +26,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: postgres
-  namespace: centigro
 spec:
   replicas: 2
   selector:
@@ -48,9 +47,9 @@ spec:
                 name: postgres-config
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgres-pv-claim
+              name: postgres-pv
       volumes:
-        - name: postgres-pv-claim
+        - name: postgres-pv
           persistentVolumeClaim:
             claimName: postgres-pv-claim
 
