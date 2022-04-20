@@ -38,7 +38,7 @@ export const Section2 = styled(Section)`
 `;
 
 export const BasicInfo = styled(Section1)`
-  min-height: 350px;
+  min-height: 400px;
   width: 400px;
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
     min-height: auto;
@@ -47,7 +47,7 @@ export const BasicInfo = styled(Section1)`
 `;
 
 export const TimeFrame = styled(Section2)`
-  min-height: 350px;
+  min-height: 400px;
   width: calc(100% - 400px);
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
     min-height: auto;
@@ -62,7 +62,7 @@ export const Location = styled(Section1)`
   }
 `;
 
-export const CoverPhoto = styled(Section2)`
+export const Participants = styled(Section2)`
   width: calc(100% - 400px);
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
     width: 100%;

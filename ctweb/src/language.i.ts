@@ -33,7 +33,7 @@ export interface ILanguage {
     eventTitle: string;
     description: string;
   };
-  coverPhoto: {
+  participants: {
     header: string;
   };
   timeFrame: {

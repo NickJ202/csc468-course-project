@@ -1,7 +1,7 @@
 import { EventCreateBasicInfo } from "../../molecules/EventCreateBasicInfo";
 import { EventCreateLocation } from "../../molecules/EventCreateLocation";
 import { EventCreateTimeFrame } from "../../molecules/EventCreateTimeFrame";
-// import { EventCreateCoverPhoto } from "../../molecules/EventCreateCoverPhoto";
+import { EventCreateParticipants } from "../../molecules/EventCreateParticipants";
 
 import * as S from "./styles";
 
@@ -15,11 +15,11 @@ export default function EventsCreate1() {
         <EventCreateTimeFrame />
       </S.TimeFrame>
       <S.Location>
-        <EventCreateLocation />
+        <EventCreateParticipants />  
       </S.Location>
-      {/* <S.CoverPhoto>
-        <EventCreateCoverPhoto />
-      </S.CoverPhoto> */}
+      <S.Participants>
+        <EventCreateLocation />
+      </S.Participants>
     </S.Wrapper>
   );
 }

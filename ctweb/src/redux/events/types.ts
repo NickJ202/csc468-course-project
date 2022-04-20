@@ -13,7 +13,20 @@ export type EventLocationType = {
   country: NStringType;
 };
 
-export type EventType = EventBasicInfoType & EventLocationType;
+export type EventTimeFrameType = {
+  startDate: NStringType;
+  endDate: NStringType;
+  startTime: NStringType;
+  endTime: NStringType;
+}
+
+export type EventParticipantsType = {
+  min: NStringType;
+  max: NStringType;
+  tips: NStringType;
+}
+
+export type EventType = EventBasicInfoType & EventLocationType & EventTimeFrameType & EventParticipantsType;
 
 export type EventActionType = {
   type: string;
