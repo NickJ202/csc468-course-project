@@ -47,12 +47,11 @@ spec:
                 name: postgres-config
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgresdb
+              name: postres-pv-claim
       volumes:
         - name: postgresdb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
-      restartPolicy: Always
 
 ---
 
