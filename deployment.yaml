@@ -79,7 +79,7 @@ spec:
             - containerPort: 8000
           env:
             - name: DB_HOST
-              value: "db"
+              value: "postgres"
             - name: DB_NAME
               value: "postgres"
             - name: DB_USER
