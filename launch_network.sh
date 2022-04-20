@@ -15,8 +15,12 @@ then
     kubectl delete namespaces centigro
 fi
 
-echo "Creating namespace ramcoin"
+echo "Creating namespace centigro"
 kubectl create namespace centigro 
+
+echo "Creating postgres config"
+kubectl create -f postgres-config.yaml --namespace centigro
+kubectl create -f postgres-storage.yaml --namespace centigro
  
 echo "Creating pods"
 kubectl create -f deployment.yaml --namespace centigro
