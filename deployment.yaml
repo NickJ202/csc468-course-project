@@ -73,7 +73,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: nickj202/api
+          image: manalaro1/api
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
