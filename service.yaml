@@ -36,9 +36,9 @@ metadata:
   name: api
 spec:
   type: NodePort
-  ports:
-    selector:
+  selector:
       app: api
+  ports:
     - port: 8000
       targetPort: 8000
       protocol: TCP
