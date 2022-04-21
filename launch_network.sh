@@ -19,7 +19,7 @@ echo "Creating namespace centigro"
 kubectl create namespace centigro 
 
 echo "Creating postgres volume and config"
-kubectl create -f postgres-config.yaml --namesapce centigro
+kubectl create -f postgres-config.yaml --namepace centigro
 kubectl create -f postgres-storage.yaml --namespace centigro
  
 echo "Creating pods"
