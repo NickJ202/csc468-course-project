@@ -3,14 +3,14 @@ apiVersion: v1
 metadata:
   name: web
 spec:
-  type: NodePort
+  type: ClusterIP
+  selector:
+    app: web
   ports:
     - port: 80
       targetPort: 80
-      protocol: TCP
-      nodePort: 31000
-  selector:
-    app: web
+      # protocol: TCP
+      # nodePort: 31000
 
 ---
 
@@ -18,17 +18,15 @@ kind: Service
 apiVersion: v1
 metadata:
   name: postgres
-  labels:
-    app: postgres
 spec:
-  type: NodePort
+  type: ClusterIP
+  selector:
+    app: postgres
   ports:
     - port: 5432
       targetPort: 5432
-      nodePort: 32100
-      protocol: TCP
-  selector:
-   app: postgres
+      # protocol: TCP
+      # nodePort: 31100
 
 ---
 
@@ -37,11 +35,11 @@ apiVersion: v1
 metadata:
   name: api
 spec:
-  type: NodePort
+  type: ClusterIP
+  selector:
+    app: api
   ports:
     - port: 8000
       targetPort: 8000
-      protocol: TCP
-      nodePort: 32000
-  selector:
-    app: api
+      # protocol: TCP
+      # nodePort: 32000
