@@ -87,5 +87,5 @@ spec:
             - name: DB_PASSWORD
               value: "postgres"
             - name: DB_PORT
-              value: "postgres"
+              value: "5432"
       restartPolicy: Always
