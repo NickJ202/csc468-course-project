@@ -28,9 +28,5 @@ kubectl create -f deployment.yaml --namespace centigro
 echo "Creating services"
 kubectl create -f service.yaml --namespace centigro
 
-echo "Update services to CloudLab IP"
-cloudIp = $(ip address show eth1 | perl -nwe 'print /^\s+inet\s+(.*?)\//;')
-kubectl patch svc web -p '{"spec":{"externalIPs":["$cloudIp"]}}'
-
 kubectl get pods -n centigro
 
