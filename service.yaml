@@ -9,6 +9,7 @@ spec:
   ports:
     - port: 80
       targetPort: 80
+      externalIP: 192.168.1.1
       # protocol: TCP
       # nodePort: 31000
 
