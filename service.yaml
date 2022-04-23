@@ -10,7 +10,7 @@ spec:
     - port: 80
       targetPort: 80
   externalIPs: 
-    - 0.0.0.0
+    - 1.1.1.1
       # protocol: TCP
       # nodePort: 31000
 
