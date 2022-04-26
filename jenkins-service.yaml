@@ -7,7 +7,7 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 33000
+      nodePort: 32500
   selector:
     app: jenkins
 
