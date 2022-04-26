@@ -16,7 +16,6 @@ services:
     platform: linux/amd64
     container_name: api
     build: ./iam
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/iam/code
     ports:
@@ -25,6 +24,8 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
     depends_on:
       - db
   

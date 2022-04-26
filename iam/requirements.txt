@@ -9,7 +9,6 @@ cffi==1.15.0
 charset-normalizer==2.0.12
 cryptography==36.0.1
 Deprecated==1.2.13
-Django~=4.0.3
 idna==3.3
 jwcrypto==1.0
 oauthlib==3.2.0
@@ -19,3 +18,4 @@ requests==2.27.1
 sqlparse==0.4.2
 urllib3==1.26.8
 wrapt==1.13.3
+gunicorn==19.9.0

@@ -38,11 +38,22 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: nickj202/postgres
-          imagePullPolicy: Always
+          image: postgres:latest
+          imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
-      restartPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgres-pv
+      volumes:
+        - name: postgres-pv
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
+          # hostPath: 
+          #   path: /var/lib/postgresql/data
 
 ---
 
@@ -62,8 +73,19 @@ spec:
     spec:
       containers:
         - name: api
-          image: nickj202/api
+          image: manalaro1/api
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
+          env:
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_NAME
+              value: "postgres"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "postgres"
+            - name: DB_PORT
+              value: "5432"
       restartPolicy: Always

@@ -1,6 +1,7 @@
 import React from "react";
 import Calendar from "react-calendar";
-
+import { useDispatch, useSelector } from "react-redux";
+import { storePartialEvent } from "../../../redux/events/actions";
 // import "react-calendar/dist/Calendar.css";
 
 import { FormField } from "../../atoms/FormField";
@@ -8,13 +9,28 @@ import { SectionTitle } from "../../atoms/SectionTitle";
 
 import * as S from "./styles";
 import { language } from "../../../language";
-
+import { RootState } from "../../../redux/store";
 export default function EventCreateTimeFrame() {
+  const dispatch = useDispatch();
+  const eventCreateData = useSelector(
+    (state: RootState) => state.eventCreateReducer
+  );
   const [calendarDate, setCalendarDate] = React.useState(new Date());
-  const [startDate, setStartDate] = React.useState<string>("");
-  const [endDate, setEndDate] = React.useState<string>("");
-  // const [startTime, setStartTime] = React.useState<string>("");
-  // const [endTime, setEndTime] = React.useState<string>("");
+  const [startDate, setStartDate] = React.useState<string>(eventCreateData.startDate || "");
+  const [endDate, setEndDate] = React.useState<string>(eventCreateData.endDate || "");
+  const [startTime, setStartTime] = React.useState<string>(eventCreateData.startTime || "");
+  const [endTime, setEndTime] = React.useState<string>(eventCreateData.endTime || "");
+
+  React.useEffect(() => {
+    dispatch(
+      storePartialEvent({
+        startDate: startDate,
+        endDate: endDate,
+        startTime: startTime,
+        endTime: endTime,
+      })
+    );
+  }, [startDate, endDate, startTime, endTime, dispatch]);
 
   const onDateChange = (date: any) => {
     setCalendarDate(date);
@@ -30,10 +46,6 @@ export default function EventCreateTimeFrame() {
       setEndDate(parsedDate);
     }
   };
-
-  React.useEffect(() => {
-    console.log();
-  }, []);
 
   return (
     <S.Wrapper>
@@ -54,7 +66,7 @@ export default function EventCreateTimeFrame() {
             onChange={(e) => setEndDate(e.target.value)}
             placeholder={language.timeFrame.dateFormatter}
           />
-          {/* <FormField
+          <FormField
             label={language.timeFrame.startTime}
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
@@ -65,7 +77,7 @@ export default function EventCreateTimeFrame() {
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
             placeholder={language.timeFrame.timeFormatter}
-          /> */}
+          />
         </S.Fields>
         <S.CalendarContainer>
           <S.Calendar>
