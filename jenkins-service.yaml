@@ -20,8 +20,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 30500
-      targetPort: 30500
-      nodePort: 30500
+    - port: 30575
+      targetPort: 30575
+      nodePort: 30575
   selector:
     app: jenkins
