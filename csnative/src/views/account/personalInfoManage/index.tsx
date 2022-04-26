@@ -1,1 +1,0 @@
-export { default as PersonalInfoManage } from './PersonalInfoManage';
