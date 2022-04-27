@@ -1,1 +1,0 @@
-export { default as SignUp_PhoneConfirm_4 } from './SignUp_PhoneConfirm_4';

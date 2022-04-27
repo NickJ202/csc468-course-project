@@ -1,1 +1,0 @@
-export { default as SignUp_Success_6 } from './SignUp_Success_6';
