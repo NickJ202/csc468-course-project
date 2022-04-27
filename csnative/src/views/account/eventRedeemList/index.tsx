@@ -1,1 +1,0 @@
-export { default as EventRedeemList } from './EventRedeemList';

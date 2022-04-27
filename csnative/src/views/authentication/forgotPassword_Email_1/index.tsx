@@ -1,1 +1,0 @@
-export { default as ForgotPassword_Email_1 } from './ForgotPassword_Email_1';

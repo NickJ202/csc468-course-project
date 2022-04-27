@@ -1,1 +1,0 @@
-export { default as SignUp_EmailPassword_1 } from './SignUp_EmailPassword_1';
