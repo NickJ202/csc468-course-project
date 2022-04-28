@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: api
+spec:
+  type: ClusterIP
+  selector:
+      app: api
+  ports:
+    - port: 8000
+      targetPort: 8000
+      # protocol: TCP
+      # nodePort: 32000
