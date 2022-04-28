@@ -7,7 +7,7 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 32500
+      nodePort: 31000
   selector:
     app: jenkins
 
@@ -20,8 +20,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 30575
-      targetPort: 30575
-      nodePort: 30575
+    - port: 32000
+      targetPort: 32000
+      nodePort: 32000
   selector:
     app: jenkins
