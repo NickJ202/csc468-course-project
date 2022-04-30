@@ -26,8 +26,8 @@ echo "Creating namespace centigro"
 kubectl create namespace centigro 
 
 echo "Creating postgres volume and config"
-kubectl create -f postgres/postgres-config.yaml --namespace centigro
-kubectl create -f postgres/postgres-storage.yaml --namespace centigro
+kubectl create -f cloud/postgres/postgres-config.yaml --namespace centigro
+kubectl create -f cloud/postgres/postgres-storage.yaml --namespace centigro
  
 echo "Creating pods"
 kubectl create -f cloud/api/api.yaml --namespace centigro
