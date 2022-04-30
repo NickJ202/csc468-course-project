@@ -30,16 +30,16 @@ kubectl create -f cloud/postgres/postgres-config.yaml --namespace centigro
 kubectl create -f cloud/postgres/postgres-storage.yaml --namespace centigro
  
 echo "Creating pods"
-kubectl create -f cloud/api/api.yaml --namespace centigro
-kubectl create -f cloud/postgres/postgres.yaml --namespace centigro
-kubectl create -f cloud/web/web.yaml --namespace centigro
-kubectl create -f cloud/jenkins/jenkins.yaml --namespace centigro
+kubectl create -f api/api.yaml --namespace centigro
+kubectl create -f postgres/postgres.yaml --namespace centigro
+kubectl create -f web/web.yaml --namespace centigro
+kubectl create -f jenkins/jenkins.yaml --namespace centigro
 
 echo "Creating services"
-kubectl create -f cloud/api/api-service.yaml --namespace centigro 
-kubectl create -f cloud/postgres/postgres-service.yaml --namespace centigro 
-kubectl create -f cloud/web/web-service.yaml --namespace centigro 
-kubectl create -f cloud/jenkins/jenkins-service.yaml --namespace centigro 
+kubectl create -f api/api-service.yaml --namespace centigro 
+kubectl create -f postgres/postgres-service.yaml --namespace centigro 
+kubectl create -f web/web-service.yaml --namespace centigro 
+kubectl create -f jenkins/jenkins-service.yaml --namespace centigro 
 
 kubectl get pods -n centigro
 
