@@ -18,6 +18,18 @@ class OrgListView(generics.ListCreateAPIView):
     #         return Response(serializer.data, status=status.HTTP_201_CREATED)
     #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class OrgDetailView(generics.RetrieveUpdateDestroyAPIView):
+"""class OrgDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Organization.objects.all()
+    serializer_class = OrgSerializer
+"""
+class OrgDetailView(generics.RetrieveAPIView):
+    queryset = Organization.objects.all()
+    serializer_class = OrgSerializer
+
+class OrgDetailView(generics.UpdateAPIView):
+    queryset = Organization.objects.all()
+    serializer_class = OrgSerializer
+
+class OrgDetailView(generics.DestroyAPIView):
     queryset = Organization.objects.all()
     serializer_class = OrgSerializer

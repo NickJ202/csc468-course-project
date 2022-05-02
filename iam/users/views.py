@@ -59,3 +59,14 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
 #             user = form.save()
 #             login(request, user)
 #             return redirect(reverse("dashboard"))
+class UserDetailView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetailView(generics.UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetailView(generics.DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
