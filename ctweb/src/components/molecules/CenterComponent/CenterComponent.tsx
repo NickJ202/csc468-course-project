@@ -14,20 +14,24 @@ export default function CenterComponent(props: IProps) {
       <S.Element>
         <S.Image src={props.imageSrc} />
       </S.Element>
-      <S.Element>
-        <S.Info>
-          <b>{props.information}</b>
-        </S.Info>
-      </S.Element>
-      <S.Element>
-        <Button
-          formSubmit={false}
-          label={props.actionLabel}
-          disabled={false}
-          type={"primary"}
-          handlePress={props.handleAction}
-        />
-      </S.Element>
+      {props.information &&
+        <S.Element>
+          <S.Info>
+            <b>{props.information}</b>
+          </S.Info>
+        </S.Element>
+      }
+      {props.handleAction &&
+        <S.Element>
+          <Button
+            formSubmit={false}
+            label={props.actionLabel}
+            disabled={false}
+            type={"primary"}
+            handlePress={props.handleAction}
+          />
+        </S.Element>
+      }
     </S.Wrapper>
   );
 }

@@ -10,7 +10,7 @@ import logo from "../assets/logo-primary.png";
 import logoMobile from "../assets/logo-title-alt.png";
 import menu from "../assets/menu.svg";
 import events from "../assets/events.svg";
-// import account from "../assets/account.svg";
+import account from "../assets/account.svg";
 
 import * as S from "./styles";
 import { IProps } from "./types";
@@ -114,14 +114,14 @@ export default function Navigation() {
                 />
               </S.ElementContainer>
 
-              {/* <S.FooterContainer>
+              <S.FooterContainer>
                 <NavigationElement
                   href={U.account}
                   src={account}
                   name={formatCapitalize(U.account)}
                   desktop={desktop}
                 />
-              </S.FooterContainer> */}
+              </S.FooterContainer>
             </S.ElementsContainer>
           </NavigationContainer>
         </>

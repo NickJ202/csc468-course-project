@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom";
 
 import { Button } from "../../atoms/Button";
+import { EventsCreateProgress } from "../../molecules/EventsCreateProgress";
+
 import { IProps } from "./types";
 import * as S from "./styles";
 import { language } from "../../../language";
@@ -13,6 +15,7 @@ export default function EventsCreateStep(props: IProps) {
   }
   return (
     <S.Wrapper>
+      <EventsCreateProgress activeStep={props.progressLabel}/>
       <S.CWrapper>{props.children}</S.CWrapper>
       <S.Actions>
         <S.ButtonContainer>

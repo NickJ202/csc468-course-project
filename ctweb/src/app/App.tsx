@@ -7,6 +7,7 @@ export default function App() {
   const authData = useSelector(
     (state: RootState) => state.authReducer
   );
+
   return (
     <>
       <Root authenticated={authData.token} />

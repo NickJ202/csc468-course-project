@@ -41,7 +41,7 @@ export const StepWrapper = styled.div`
   padding: 30px 0;
   background: ${(props) => props.theme.colors.container.primary.background};
   border: 1px solid ${(props) => props.theme.colors.border.primary};
-  border-radius: 5px;
+  border-radius: ${SC.STYLING.borderRadius};
   @media (max-width: ${SC.STYLING.cutoffInitial}) {
     flex-direction: column;
     padding: 40px;

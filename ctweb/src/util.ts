@@ -14,10 +14,11 @@ export function checkWindowResize(fn: () => void): void {
 }
 
 export function checkCurrentPath(url: string): boolean {
-  if (window.location.pathname === U.base) {
+  const path = window.location.pathname;
+  if (path === U.base || path === U.logIn) {
     return U.events.includes(url.substring(1, url.length - 1));
   }
-  return window.location.pathname.includes(url.substring(1, url.length - 1));
+  return path.includes(url.substring(1, url.length - 1));
 }
 
 export function formatEmail(email: string) {

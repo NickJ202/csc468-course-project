@@ -43,7 +43,8 @@ export type URLViewType = {
 };
 
 export interface IURLView {
-  account: URLViewType[];
+  account: URLViewType[],
+  eventsCreate: URLViewType[]
 }
 
 export type RefType = { current: HTMLElement };

@@ -48,7 +48,7 @@ export const HView = styled.div`
   display: flex;
   margin-bottom: ${SC.STYLING.viewHeaderPadding};
   @media (max-width: ${SC.STYLING.cutoffSecondary}) {
-    height: 100px;
+    height: auto;
     flex-direction: column;
   }
 `;

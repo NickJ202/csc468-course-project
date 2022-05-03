@@ -15,7 +15,6 @@ import { IProps } from "./types";
 export default function LogIn(props: IProps) {
     const [email, setEmail] = React.useState<string | null>(null);
     const [password, setPassword] = React.useState<string | null>(null);
-
     const [invalidEmail, setInvalidEmail] = React.useState<string | null>(null);
 
     function handleSubmit(e: React.SyntheticEvent) {

@@ -5,4 +5,5 @@ export interface IProps {
   backOption?: boolean;
   finalStep?: boolean;
   children: React.ReactNode;
+  progressLabel: number;
 }

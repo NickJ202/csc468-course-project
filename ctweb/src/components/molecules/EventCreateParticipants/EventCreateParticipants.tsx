@@ -8,6 +8,7 @@ import { SectionTitle } from "../../atoms/SectionTitle";
 import { FormField } from "../../atoms/FormField";
 import { TextArea } from "../../atoms/TextArea";
 import { RootState } from "../../../redux/store";
+
 export default function EventCreateParticipants() {
   const dispatch = useDispatch();
   const eventCreateData = useSelector(
@@ -35,21 +36,21 @@ export default function EventCreateParticipants() {
         <S.RowContainer>
           <S.HalfField>
             <FormField
-              label="Minimum Attendance"
+              label={language.min}
               value={min}
               onChange={(e) => setMin(e.target.value)}
             />
           </S.HalfField>
           <S.HalfField>
             <FormField
-              label="Maximum Attendance"
+              label={language.max}
               value={max}
               onChange={(e) => setMax(e.target.value)}
             />
           </S.HalfField>
         </S.RowContainer>
         <TextArea
-          label="Tips/General Information"
+          label={language.tips}
           value={tips}
           onChange={(e: any) => setTips(e.target.value)}
         />

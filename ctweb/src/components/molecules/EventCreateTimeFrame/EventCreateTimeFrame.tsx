@@ -2,7 +2,6 @@ import React from "react";
 import Calendar from "react-calendar";
 import { useDispatch, useSelector } from "react-redux";
 import { storePartialEvent } from "../../../redux/events/actions";
-// import "react-calendar/dist/Calendar.css";
 
 import { FormField } from "../../atoms/FormField";
 import { SectionTitle } from "../../atoms/SectionTitle";

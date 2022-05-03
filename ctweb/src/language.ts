@@ -1,9 +1,7 @@
-import { ILanguage } from "./language.i";
-
 const dateFormatter = "MM / DD / YYYY";
 const timeFormatter = "00 : 00 PM";
 
-export const language: ILanguage = {
+export const language = {
   account: {
     title: "Account",
     billing: {
@@ -23,6 +21,7 @@ export const language: ILanguage = {
   contact: "Contact",
   continue: "Continue",
   create: "Create",
+  dateRange: "Date Range",
   edit: "Edit",
   enterValidEmail: "Please enter a valid email",
   errorOccurred: "Error Occurred",
@@ -65,6 +64,8 @@ export const language: ILanguage = {
   logInHeader: "Welcome Back!",
   logInInfo: "Login information",
   logOut: "Log out",
+  max: "Maximum Attendance",
+  min: "Minimum Attendance",
   org: "Organization",
   profileImage: {
     title: "Profile Image",
@@ -73,6 +74,10 @@ export const language: ILanguage = {
   publish: "Publish",
   return: "Return",
   submit: "Submit",
+  summary: "Summary",
+  targetAudience: "Target Audience",
+  timeRange: "Time Range",
+  tips: "Tips / General Information",
   auth: {
     org: {
       fields: {

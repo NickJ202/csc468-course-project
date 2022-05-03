@@ -15,7 +15,7 @@ export default function EventCreateLocation() {
   const eventCreateData = useSelector(
     (state: RootState) => state.eventCreateReducer
   );
-  
+
   const fields = CF.CREATE.address.fields;
 
   const [address, setAddress] = React.useState<string>(eventCreateData.address1 || "");
@@ -40,13 +40,15 @@ export default function EventCreateLocation() {
     <S.Wrapper>
       <SectionTitle header={language.location.header} />
       <S.FlexContainer>
-        <S.FullField>
-          <FormField
-            label={fields[0].label}
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </S.FullField>
+        <S.Address>
+          <S.HalfField>
+            <FormField
+              label={fields[0].label}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+          </S.HalfField>
+        </S.Address>
         <S.RowContainer>
           <S.HalfField>
             <FormField
