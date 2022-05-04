@@ -28,12 +28,12 @@ pipeline {
             }
             steps {
                 sshagent(credentials: ['cloudlab']) {
-                    sh "sed -i 's/DOCKER_USER/${docker_user}/g' /local/repository/cloud/api.yaml"
-                    sh "sed -i 's/DOCKER_APP/${docker_app}/g' /local/repository/cloud/api.yaml"
-                    sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' /local/repository/cloud/api.yaml"
+                    sh "sed -i 's/DOCKER_USER/${docker_user}/g' /local/repository/cloud/api/api.yaml"
+                    sh "sed -i 's/DOCKER_APP/${docker_app}/g' /local/repository/cloud/api/api.yaml"
+                    sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' /local/repository/cloud/api/api.yaml"
                     sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml nj892079@155.98.37.91:~/'
-                    sh 'ssh -o StrictHostKeyChecking=no nj892079@155.98.37.91 kubectl apply -f /local/repository/cloud/api.yaml -n centigro'
-                    sh 'ssh -o StrictHostKeyChecking=no nj892079@155.98.37.91 kubectl apply -f /local/repository/cloud/api-service.yaml -n centigro'                    
+                    sh 'ssh -o StrictHostKeyChecking=no nj892079@155.98.37.91 kubectl apply -f /local/repository/cloud/api/api.yaml -n centigro'
+                    sh 'ssh -o StrictHostKeyChecking=no nj892079@155.98.37.91 kubectl apply -f /local/repository/cloud/api/api-service.yaml -n centigro'                    
                 }
             }
         }
