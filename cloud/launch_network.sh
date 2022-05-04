@@ -18,7 +18,7 @@ namespaceStatus=$(kubectl get namespaces centigro -o json | jq .status.phase -r)
 
 if [ $namespaceStatus == "Active" ]
 then
-    echo "Namespace cnetigro exists, need to clean up"
+    echo "Namespace centigro exists, need to clean up"
     kubectl delete namespaces centigro
 fi
 
@@ -28,7 +28,7 @@ kubectl create namespace centigro
 echo "Creating postgres volume and config"
 kubectl create -f postgres/postgres-config.yaml --namespace centigro
 kubectl create -f postgres/postgres-storage.yaml --namespace centigro
- 
+
 echo "Creating pods"
 kubectl create -f api/api.yaml --namespace centigro
 kubectl create -f postgres/postgres.yaml --namespace centigro
