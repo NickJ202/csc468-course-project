@@ -31,9 +31,9 @@ pipeline {
                     sh "sed -i 's/DOCKER_USER/${docker_user}/g' api.yaml"
                     // sh "sed -i 's/DOCKER_APP/${docker_app}/g' api.yaml"
                     sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' api.yaml"
-                    sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml patodo@155.98.37.91:~/'
-                    sh 'ssh -o StrictHostKeyChecking=no patodo@155.98.37.91 kubectl apply -f /users/patodo/api.yaml -n centigro'
-                    sh 'ssh -o StrictHostKeyChecking=no patodo@155.98.37.91 kubectl apply -f /users/patodo/api-service.yaml -n centigro'                    
+                    sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml patodo@pcvm767-1.emulab.net:~/'
+                    sh 'ssh -o StrictHostKeyChecking=no patodo@pcvm767-1.emulab.net kubectl apply -f /users/patodo/api.yaml -n centigro'
+                    sh 'ssh -o StrictHostKeyChecking=no patodo@pcvm767-1.emulab.net kubectl apply -f /users/patodo/api-service.yaml -n centigro'                    
                 }
             }
         }
