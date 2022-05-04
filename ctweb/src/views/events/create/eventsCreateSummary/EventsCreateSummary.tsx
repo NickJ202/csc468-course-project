@@ -1,12 +1,13 @@
-import { EventsCreateStep } from "../../../../components/organisms/EventsCreateStep";
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../../redux/store';
+import { useSelector } from "react-redux";
 
+import { EventsCreateStep } from "../../../../components/organisms/EventsCreateStep";
 import { InformationLine } from "../../../../components/atoms/InformationLine";
 
 import { language } from "../../../../language";
 import * as U from "../../../../urls";
 import * as S from "./styles";
+
+import { RootState } from '../../../../redux/store';
 
 export default function EventsCreateSummaryView() {
   const eventCreateData = useSelector(
@@ -40,7 +41,7 @@ export default function EventsCreateSummaryView() {
             />
             <InformationLine
               label={language.targetAudience}
-              data={eventCreateData.min + " - " + eventCreateData.max}
+              data={eventCreateData.minAttendees + " - " + eventCreateData.maxAttendees}
             />
             <InformationLine
               label={language.location.fields.address}

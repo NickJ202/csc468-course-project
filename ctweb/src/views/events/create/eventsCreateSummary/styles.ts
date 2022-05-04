@@ -6,11 +6,11 @@ export const Wrapper = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
+  padding-top: 40px;
 `;
 
 export const MainContainer = styled.div`
     height: 500px;
-    max-height: 700px;
     overflow-y: auto;
     width: 450px;
     max-width: 95vw;
@@ -18,10 +18,6 @@ export const MainContainer = styled.div`
     border: 1px solid ${(props) => props.theme.colors.border.primary};
     border-radius: ${SC.STYLING.borderRadius};
     margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     @media(max-width: ${SC.STYLING.cutoffSecondary}) {
       width: auto;
       position: relative;

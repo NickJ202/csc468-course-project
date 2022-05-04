@@ -42,7 +42,7 @@ export const language = {
     header: "Participant Information",
   },
   timeFrame: {
-    header: "Timeframe",
+    header: "Time Frame",
     startDate: "Start Date",
     endDate: "End Date",
     startTime: "Start Time",

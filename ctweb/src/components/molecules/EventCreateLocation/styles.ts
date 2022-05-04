@@ -34,7 +34,7 @@ export const RowContainer = styled.div`
 
 export const Address = styled.div`
   width: 100%;
-  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const FullField = styled.div`

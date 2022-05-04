@@ -21,12 +21,20 @@ export type EventTimeFrameType = {
 }
 
 export type EventParticipantsType = {
-  min: NStringType;
-  max: NStringType;
+  minAttendees: NStringType;
+  maxAttendees: NStringType;
   tips: NStringType;
 }
 
-export type EventType = EventBasicInfoType & EventLocationType & EventTimeFrameType & EventParticipantsType;
+export type EventOrgType = {
+  org: NStringType;
+}
+
+export type EventType = EventBasicInfoType &
+  EventLocationType &
+  EventTimeFrameType &
+  EventParticipantsType &
+  EventOrgType;
 
 export type EventActionType = {
   type: string;

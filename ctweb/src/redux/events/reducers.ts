@@ -8,14 +8,15 @@ export const initialState: EventType = {
   endDate: null,
   startTime: null,
   endTime: null,
-  min: null,
-  max: null,
+  minAttendees: null,
+  maxAttendees: null,
   tips: null,
   address1: null,
   locality: null,
   administrativeArea: null,
   postalCode: null,
   country: null,
+  org: null
 };
 
 export default function eventCreateReducer(
@@ -31,8 +32,8 @@ export default function eventCreateReducer(
         endDate: action.payload.endDate ?? state.endDate,
         startTime: action.payload.startTime ?? state.startTime,
         endTime: action.payload.endTime ?? state.endTime,
-        min: action.payload.min ?? state.min,
-        max: action.payload.max ?? state.max,
+        minAttendees: action.payload.minAttendees ?? state.minAttendees,
+        maxAttendees: action.payload.maxAttendees ?? state.maxAttendees,
         tips: action.payload.tips ?? state.tips,
         address1: action.payload.address1 ?? state.address1,
         locality: action.payload.locality ?? state.locality,
@@ -40,6 +41,7 @@ export default function eventCreateReducer(
           action.payload.administrativeArea ?? state.administrativeArea,
         postalCode: action.payload.postalCode ?? state.postalCode,
         country: action.payload.country ?? state.country,
+        org: action.payload.org ?? state.org
       });
     default:
       return state;

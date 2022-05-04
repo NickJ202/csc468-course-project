@@ -14,6 +14,7 @@ import * as U from "./urls";
 const API_URI = process.env.REACT_APP_API_URI;
 
 export const ORG_ENDPOINT = API_URI + "orgs/";
+export const EVENTS_ENDPOINT = API_URI + "events/"
 
 const AUTH_ENDPOINT = API_URI + "users/";
 export const TOKEN_ENDPOINT = AUTH_ENDPOINT + "api-token-auth/";

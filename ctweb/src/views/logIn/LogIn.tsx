@@ -28,6 +28,7 @@ export default function LogInView() {
                 {
                     token: response.data.token,
                     userId: response.data.userId,
+                    org: response.data.org,
                     email: response.data.email
                 }
             ));
@@ -37,6 +38,7 @@ export default function LogInView() {
                 error.response.data['non_field_errors'][0] : language.errorOccurred
             );
         });
+        setLoading(false);
     }
 
     React.useEffect(() => {

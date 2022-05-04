@@ -6,7 +6,7 @@ const THEME = {
     blue: "#3479C2",
     gray: "#666666",
     green: "#40B882",
-    jet: "#353137",
+    jet: "#303037",
     offWhite: "#FAFAFA",
     white: "#FFFFFF",
     red: "#FF0A47"

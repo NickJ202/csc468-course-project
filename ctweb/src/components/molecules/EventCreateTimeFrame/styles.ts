@@ -132,14 +132,15 @@ export const Calendar = styled.div`
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {
     color: ${(props) => props.theme.colors.font.alt.primary};
-  }
-  .react-calendar__tile--hasActive {
     background: ${(props) => props.theme.colors.button.primary.hover};
   }
-  .react-calendar__tile--hasActive:enabled:hover,
-  .react-calendar__tile--hasActive:enabled:focus {
-    background: ${(props) => props.theme.colors.button.primary.hover};
-  }
+  // .react-calendar__tile--hasActive {
+  //   background: ${(props) => props.theme.colors.button.primary.hover};
+  // }
+  // .react-calendar__tile--hasActive:enabled:hover,
+  // .react-calendar__tile--hasActive:enabled:focus {
+  //   background: ${(props) => props.theme.colors.button.primary.hover};
+  // }
   .react-calendar__tile--active {
     background: ${(props) => props.theme.colors.button.primary.background};
     color: ${(props) => props.theme.colors.button.primary.label};

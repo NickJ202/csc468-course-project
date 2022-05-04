@@ -38,7 +38,6 @@ export default function EventCreateTimeFrame() {
     let yyyy = date.getFullYear();
 
     let parsedDate = mm + "/" + dd + "/" + yyyy;
-    console.log(parsedDate);
     if (startDate.length <= 0) {
       setStartDate(parsedDate);
     } else {

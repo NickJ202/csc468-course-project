@@ -15,15 +15,15 @@ export default function EventCreateParticipants() {
     (state: RootState) => state.eventCreateReducer
   );
 
-  const [min, setMin] = React.useState<string>(eventCreateData.min || "");
-  const [max, setMax] = React.useState<string>(eventCreateData.max || "");
+  const [min, setMin] = React.useState<string>(eventCreateData.minAttendees || "");
+  const [max, setMax] = React.useState<string>(eventCreateData.maxAttendees || "");
   const [tips, setTips] = React.useState<string>(eventCreateData.tips || "");
   
   React.useEffect(() => {
     dispatch(
       storePartialEvent({
-        min: min,
-        max: max,
+        minAttendees: min,
+        maxAttendees: max,
         tips: tips
       })
     );

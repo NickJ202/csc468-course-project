@@ -1,21 +1,49 @@
+import React from "react";
+import { Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { Button } from "../../atoms/Button";
 import { EventsCreateProgress } from "../../molecules/EventsCreateProgress";
 
+import * as U from "../../../urls";
+import { language } from "../../../language";
 import { IProps } from "./types";
 import * as S from "./styles";
-import { language } from "../../../language";
+import { createEventRequest } from "../../../redux/events/actions";
+
+import { RootState } from '../../../redux/store';
 
 export default function EventsCreateStep(props: IProps) {
+  const dispatch = useDispatch();
   const history = useHistory();
+  const eventCreateData = useSelector(
+    (state: RootState) => state.eventCreateReducer
+  );
+
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [redirectEvents, setRedirectEvents] = React.useState<boolean>(false);
 
   function handleContinue() {
-    history.push(props.continueUrl);
+    if (props.finalStep) {
+      setLoading(true);
+      Promise.all([dispatch(createEventRequest(eventCreateData))])
+        .then(() => {
+          setRedirectEvents(true);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      setLoading(false);
+    }
+    else {
+      history.push(props.continueUrl);
+    }
   }
-  return (
+
+  return redirectEvents ? (<Redirect to={U.events}/>) : (
     <S.Wrapper>
-      <EventsCreateProgress activeStep={props.progressLabel}/>
+      <EventsCreateProgress activeStep={props.progressLabel} />
       <S.CWrapper>{props.children}</S.CWrapper>
       <S.Actions>
         <S.ButtonContainer>
@@ -23,7 +51,7 @@ export default function EventsCreateStep(props: IProps) {
             <Button
               formSubmit={false}
               label={language.back}
-              disabled={false}
+              disabled={loading}
               type={"secondary"}
               handlePress={() => history.goBack()}
             />
@@ -33,8 +61,9 @@ export default function EventsCreateStep(props: IProps) {
           <Button
             formSubmit={false}
             label={props.finalStep ? language.publish : language.continue}
-            disabled={false}
+            disabled={loading}
             type={"primary"}
+            loading={loading}
             handlePress={handleContinue}
           />
         </S.ButtonContainer>
