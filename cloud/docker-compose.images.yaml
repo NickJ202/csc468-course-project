@@ -15,9 +15,9 @@ services:
   api:
     platform: linux/amd64
     container_name: api
-    build: ./iam
+    build: ../iam
     volumes:
-      - .:/iam/code
+      - ..:/iam/code
     ports:
       - "8000:8000"
     environment:
@@ -32,7 +32,7 @@ services:
   web:
     platform: linux/amd64
     container_name: web
-    build: ./ctweb
+    build: ../ctweb
     ports:
       - '8080:80'
 
