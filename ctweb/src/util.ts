@@ -1,3 +1,5 @@
+import { AxiosResponse } from "axios";
+
 import * as SC from "./styling-config";
 import * as U from "./urls";
 
@@ -69,4 +71,11 @@ export function snakeToCamel(obj: any) {
     }
   }
   return obj;
+}
+
+export function convertResponse(response: AxiosResponse) {
+  let convertedResponse = Object.assign({}, response);
+  delete convertedResponse.data;
+  convertedResponse["data"] = snakeToCamel(response.data);
+  return convertedResponse;
 }

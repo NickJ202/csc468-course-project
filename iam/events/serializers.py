@@ -1,8 +1,6 @@
 from rest_framework import serializers
 
 from .models import Event
-from orgs.models import Organization
-from orgs.serializers import OrgSerializer
 
 class EventSerializer(serializers.ModelSerializer):
 
@@ -28,4 +26,3 @@ class EventSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         event = Event.objects.create(**validated_data)
         return event
-        

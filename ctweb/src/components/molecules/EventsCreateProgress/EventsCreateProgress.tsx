@@ -3,13 +3,13 @@ import {PortalHandler} from "../../../handlers/PortalHandler";
 import {IProps} from "./types";
 import * as S from "./styles";
 
-import * as C from "../../../config";
+import * as CF from "../../../config";
 
 export default function EventsCreateProgress(props: IProps) {
     return (
-        <PortalHandler domNode={C.DOM.viewHeader}>
+        <PortalHandler domNode={CF.DOM.viewHeader}>
             <S.Wrapper>
-                {C.URLS.eventsCreate.map((elem, index, arr) => (
+                {CF.URLS.eventsCreate.map((elem, index, arr) => (
                     <S.Flex key={index}>
                         <S.Step
                             active={(props.activeStep + 1) === (elem.index + 1)}
