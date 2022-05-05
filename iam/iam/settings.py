@@ -147,7 +147,8 @@ LOGIN_REDIRECT_URL ='/users/'
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://pcvm767-1.emulab.net:30500"
 ]
 
 # Logging Configuration
