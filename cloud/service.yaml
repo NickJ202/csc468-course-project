@@ -10,7 +10,7 @@ spec:
     - port: 80
       targetPort: 80
       protocol: TCP
-      nodePort: 31000
+      nodePort: 30500
 
 ---
 
@@ -36,12 +36,12 @@ apiVersion: v1
 metadata:
   name: api
 spec:
-  type: ClusterIP
-  # type: NodePort
+  # type: ClusterIP
+  type: NodePort
   selector:
       app: api
   ports:
     - port: 8000
       targetPort: 8000
       protocol: TCP
-      # nodePort: 32000
+      nodePort: 31500
