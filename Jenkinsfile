@@ -28,7 +28,8 @@ pipeline {
             }
             steps {
                 sshagent(credentials: ['cloudlab']) {
-                    sh "sed -i 's/DOCKER_USER/${DOCKER_USER}/g' api.yaml"
+                    sh "sed -i 's/DOCKER_USER/${docker_user}/g' api.yaml"
+                    sh "echo ${DOCKER_REGISTRY}"
                     sh "sed -i 's/DOCKER_REGISTRY/${DOCKER_REGISTRY}/g' api.yaml"
                     sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' api.yaml"
                     sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml patodo@pcvm767-1.emulab.net:~/'
