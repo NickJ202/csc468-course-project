@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: manalaro1/web
+          image: DOCKER_USER/web:BUILD_NUMBER
           imagePullPolicy: Always
           ports:
             - containerPort: 80
