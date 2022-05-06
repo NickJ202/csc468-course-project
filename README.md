@@ -1,2 +1,3 @@
-# csc468-course-project
-CSC 468 Course Project
+# CSC 468 Course Project - Centigro
+
+## Deployment
