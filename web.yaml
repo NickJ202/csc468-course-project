@@ -18,7 +18,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: REACT_APP_API_URI
-              value: http://api:8000
+              value: http://api:8000/
           ports:
             - containerPort: 80
       restartPolicy: Always
