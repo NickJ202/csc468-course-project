@@ -2,8 +2,8 @@ pipeline {
     agent none 
     environment {
         docker_registry = 'manalaro1/api'
-        docker_user = "manalaro1"
-        docker_app = "manalaro1/api"
+        docker_user =  'manalaro1'
+        // docker_app = 'manalaro1/api'
     }
     stages {
         stage('Publish') {
