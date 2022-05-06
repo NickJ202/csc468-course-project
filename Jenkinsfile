@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['cloudlab']) {
                     sh "sed -i 's/DOCKER_USER/${DOCKER_USER}/g' api.yaml"
-                    sh "sed -i 's/DOKCER_REGISTRY/${DOCKER_REGISTRY}/g' api.yaml"
+                    sh "sed -i 's/DOCKER_REGISTRY/${DOCKER_REGISTRY}/g' api.yaml"
                     sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' api.yaml"
                     sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml patodo@pcvm767-1.emulab.net:~/'
                     sh 'ssh -o StrictHostKeyChecking=no patodo@pcvm767-1.emulab.net kubectl apply -f /users/patodo/api.yaml -n centigro'
