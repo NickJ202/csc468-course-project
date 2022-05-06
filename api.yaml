@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: api
-          image: DOCKER_REGISTRY/api:BUILD_NUMBER
+          # image: DOCKER_REGISTRY/api:BUILD_NUMBER
+          image: DOCKER_REGISTRY:BUILD_NUMBER
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
