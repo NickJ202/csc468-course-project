@@ -126,7 +126,7 @@ dist
 .env.test.local
 .env.production.local
 .env.development
-.env.stage
+.env.staging
 .env.production
 
 npm-debug.log*
