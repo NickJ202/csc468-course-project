@@ -38,15 +38,15 @@ for i in range(num_nodes):
     link.addInterface(iface)
 
     # setup Docker
-    node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/install_docker.sh"))
+    node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/cloud/install_docker.sh"))
     # setup Kubernetes
-    node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/install_kubernetes.sh"))
+    node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/cloud/install_kubernetes.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo swapoff -a"))
     node.addService(pg.Execute(shell="/bin/sh", command="sudo apt update"))
     if i == 0:
-        node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/kube_manager.sh"))
+        node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/cloud/kube_manager.sh"))
     else:
-        node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/kube_worker.sh"))
+        node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/cloud/kube_worker.sh"))
 
 
     pc.printRequestRSpec(request)
