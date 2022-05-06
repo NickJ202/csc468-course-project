@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: nickj202/web
+          image: manalaro1/web
           imagePullPolicy: Always
           ports:
             - containerPort: 80
