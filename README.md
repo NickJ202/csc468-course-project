@@ -5,6 +5,6 @@
   **Profiles > csc468group6**
   1. Instantiate main branch
   2. SSH into head node
-  3. Run ```bash local/repository/cloud/launch_network.sh```
+  3. Run ```bash /local/repository/cloud/launch_network.sh```
 
 After network launch, frontend will be running at **InternalIP:30500**
