@@ -16,6 +16,9 @@ spec:
         - name: web
           image: DOCKER_USER/web:BUILD_NUMBER
           imagePullPolicy: Always
+          env:
+            - name: REACT_APP_API_URL
+              value: http://api:8000
           ports:
             - containerPort: 80
       restartPolicy: Always
