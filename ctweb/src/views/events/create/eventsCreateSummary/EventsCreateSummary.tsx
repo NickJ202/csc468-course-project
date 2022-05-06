@@ -1,48 +1,71 @@
-import { EventsCreateStep } from "../../../../components/organisms/EventsCreateStep";
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../../redux/store';
-import { SectionTitle, FlexContainer } from "./styles";
+import { useSelector } from "react-redux";
 
+import { EventsCreateStep } from "../../../../components/organisms/EventsCreateStep";
+import { InformationLine } from "../../../../components/atoms/InformationLine";
+
+import { language } from "../../../../language";
 import * as U from "../../../../urls";
+import * as S from "./styles";
+
+import { RootState } from '../../../../redux/store';
 
 export default function EventsCreateSummaryView() {
   const eventCreateData = useSelector(
     (state: RootState) => state.eventCreateReducer
   );
-  
-    function handleLog() {
-      console.log(eventCreateData);
-    }
 
-  let dateStr = eventCreateData.startDate + " - " + eventCreateData.endDate;
-  let timeStr = eventCreateData.startTime + " - " + eventCreateData.endTime;
-  let participantStr = eventCreateData.min + " - " + eventCreateData.max;
-  let cityStr = eventCreateData.locality + ", " + eventCreateData.administrativeArea;
   return (
     <EventsCreateStep
       continueUrl={U.eventsCreateConfirmation}
+      progressLabel={1}
       backOption
       finalStep
     >
-      <h1>Summary</h1>
-      <FlexContainer>
-        <SectionTitle>Title of Event</SectionTitle>
-        <h2>{eventCreateData.title}</h2>
-        <br />
-        <SectionTitle>Dates</SectionTitle>
-        <h2>{dateStr}</h2>
-        <br />
-        <SectionTitle>Times</SectionTitle>
-        <h2>{timeStr}</h2>
-        <br />
-        <SectionTitle>Target Attendance</SectionTitle>
-        <h2>{participantStr}</h2>
-        <br />
-        <SectionTitle>Location</SectionTitle>
-        <h2>{eventCreateData.address1}</h2>
-        <h2>{cityStr}</h2>
-        <h2>{eventCreateData.postalCode}</h2>
-      </FlexContainer>
+      <S.Wrapper>
+        <S.MainContainer>
+          <S.HeaderContainer>
+            <h1>{language.summary}</h1>
+          </S.HeaderContainer>
+          <S.BodyContainer>
+            <InformationLine
+              label={language.basicInfo.eventTitle}
+              data={eventCreateData.title || "-"}
+            />
+            <InformationLine
+              label={language.dateRange}
+              data={eventCreateData.startDate + " - " + eventCreateData.endDate}
+            />
+            <InformationLine
+              label={language.timeRange}
+              data={eventCreateData.startTime + " - " + eventCreateData.endTime}
+            />
+            <InformationLine
+              label={language.targetAudience}
+              data={eventCreateData.minAttendees + " - " + eventCreateData.maxAttendees}
+            />
+            <InformationLine
+              label={language.location.fields.address}
+              data={eventCreateData.address1 || "-"}
+            />
+            <InformationLine
+              label={language.location.fields.city}
+              data={eventCreateData.locality || "-"}
+            />
+            <InformationLine
+              label={language.location.fields.state}
+              data={eventCreateData.administrativeArea || "-"}
+            />
+            <InformationLine
+              label={language.location.fields.postalCode}
+              data={eventCreateData.postalCode || "-"}
+            />
+            <InformationLine
+              label={language.location.fields.country}
+              data={eventCreateData.country || "-"}
+            />
+          </S.BodyContainer>
+        </S.MainContainer>
+      </S.Wrapper>
     </EventsCreateStep>
   );
 }

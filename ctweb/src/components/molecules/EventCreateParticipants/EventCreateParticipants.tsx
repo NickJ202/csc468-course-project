@@ -8,21 +8,22 @@ import { SectionTitle } from "../../atoms/SectionTitle";
 import { FormField } from "../../atoms/FormField";
 import { TextArea } from "../../atoms/TextArea";
 import { RootState } from "../../../redux/store";
+
 export default function EventCreateParticipants() {
   const dispatch = useDispatch();
   const eventCreateData = useSelector(
     (state: RootState) => state.eventCreateReducer
   );
 
-  const [min, setMin] = React.useState<string>(eventCreateData.min || "");
-  const [max, setMax] = React.useState<string>(eventCreateData.max || "");
+  const [min, setMin] = React.useState<string>(eventCreateData.minAttendees || "");
+  const [max, setMax] = React.useState<string>(eventCreateData.maxAttendees || "");
   const [tips, setTips] = React.useState<string>(eventCreateData.tips || "");
   
   React.useEffect(() => {
     dispatch(
       storePartialEvent({
-        min: min,
-        max: max,
+        minAttendees: min,
+        maxAttendees: max,
         tips: tips
       })
     );
@@ -35,21 +36,21 @@ export default function EventCreateParticipants() {
         <S.RowContainer>
           <S.HalfField>
             <FormField
-              label="Minimum Attendance"
+              label={language.min}
               value={min}
               onChange={(e) => setMin(e.target.value)}
             />
           </S.HalfField>
           <S.HalfField>
             <FormField
-              label="Maximum Attendance"
+              label={language.max}
               value={max}
               onChange={(e) => setMax(e.target.value)}
             />
           </S.HalfField>
         </S.RowContainer>
         <TextArea
-          label="Tips/General Information"
+          label={language.tips}
           value={tips}
           onChange={(e: any) => setTips(e.target.value)}
         />

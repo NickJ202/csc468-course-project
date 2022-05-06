@@ -27,7 +27,3 @@ export function registerOrgRequest(payload: T.OrgType) {
 export function registerOrgSuccess(response: AxiosResponse) {
   return { type: C.REGISTER_ORG_SUCCESS, response: response };
 }
-
-export function registerOrgFailure(error: any) {
-  return { type: C.REGISTER_ORG_FAILURE, error: error };
-}

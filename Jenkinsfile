@@ -3,7 +3,6 @@ pipeline {
     environment {
         docker_registry = 'manalaro1/web'
         docker_user =  'manalaro1'
-        // docker_app = 'manalaro1/api'
     }
     stages {
         stage('Publish') {

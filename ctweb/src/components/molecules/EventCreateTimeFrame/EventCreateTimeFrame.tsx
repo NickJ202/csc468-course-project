@@ -2,7 +2,6 @@ import React from "react";
 import Calendar from "react-calendar";
 import { useDispatch, useSelector } from "react-redux";
 import { storePartialEvent } from "../../../redux/events/actions";
-// import "react-calendar/dist/Calendar.css";
 
 import { FormField } from "../../atoms/FormField";
 import { SectionTitle } from "../../atoms/SectionTitle";
@@ -39,7 +38,6 @@ export default function EventCreateTimeFrame() {
     let yyyy = date.getFullYear();
 
     let parsedDate = mm + "/" + dd + "/" + yyyy;
-    console.log(parsedDate);
     if (startDate.length <= 0) {
       setStartDate(parsedDate);
     } else {

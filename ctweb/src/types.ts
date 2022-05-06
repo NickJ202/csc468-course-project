@@ -1,9 +1,5 @@
 import React from "react";
 
-export interface IViewProps {
-  setLoading: (status: boolean) => void;
-}
-
 export interface IStyleProps {
   active?: boolean;
   disabled?: boolean;
@@ -43,7 +39,8 @@ export type URLViewType = {
 };
 
 export interface IURLView {
-  account: URLViewType[];
+  account: URLViewType[],
+  eventsCreate: URLViewType[]
 }
 
 export type RefType = { current: HTMLElement };

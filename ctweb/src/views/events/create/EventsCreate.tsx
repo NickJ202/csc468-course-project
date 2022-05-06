@@ -5,7 +5,7 @@ import * as U from "../../../urls";
 
 export default function EventsCreateView() {
   return (
-    <EventsCreateStep continueUrl={U.eventsCreateSummary}>
+    <EventsCreateStep continueUrl={U.eventsCreateSummary} progressLabel={0}>
       <EventsCreate1 />
     </EventsCreateStep>
   );

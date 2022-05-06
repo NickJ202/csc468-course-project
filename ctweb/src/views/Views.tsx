@@ -1,16 +1,12 @@
 import React from "react";
-import { IViewProps } from "../types";
 import * as S from "./styles";
 import { Breadcrumbs } from "../components/molecules/Breadcrumbs";
 import * as C from "../config";
-import { Loader } from "../components/atoms/Loader";
 
-export const View: React.FC<{ view: React.ComponentType<IViewProps> }> = ({
+export const View: React.FC<{ view: React.ComponentType }> = ({
   view,
 }) => {
-  const RouteView: React.ComponentType<IViewProps> = view;
-
-  const [loading, setLoading] = React.useState<boolean>(false);
+  const RouteView: React.ComponentType = view;
 
   return (
     <S.View>
@@ -22,11 +18,7 @@ export const View: React.FC<{ view: React.ComponentType<IViewProps> }> = ({
           <S.Portal id={C.DOM.viewHeader}></S.Portal>
         </S.HView>
         <S.BView>
-          {loading ? (
-            <Loader />
-          ) : (
-            <RouteView setLoading={(status: boolean) => setLoading(status)} />
-          )}
+          <RouteView />
         </S.BView>
       </S.Wrapper>
     </S.View>

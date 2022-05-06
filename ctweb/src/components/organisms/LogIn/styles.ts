@@ -14,7 +14,7 @@ export const MainContainer = styled.div`
     max-width: 95vw;
     background: ${(props) => props.theme.colors.container.primary.background};
     border: 1px solid ${(props) => props.theme.colors.border.primary};
-    border-radius: 5px;
+    border-radius: ${SC.STYLING.borderRadius};
     margin: 11.5vh auto 0 auto;
 `;
 

@@ -1,16 +1,20 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { LogIn } from "../../components/organisms/LogIn"
 
 import * as http from "../../http-services";
 import * as CF from "../../config";
+import * as U from "../../urls";
 import { language } from '../../language';
 
 import { setAuth } from "../../redux/auth/actions";
 
 export default function LogInView() {
     const dispatch = useDispatch();
+    const history = useHistory();
+
     const [loading, setLoading] = React.useState<boolean>(false);
     const [error, setError] = React.useState<string | null>(null);
 
@@ -24,10 +28,11 @@ export default function LogInView() {
                 {
                     token: response.data.token,
                     userId: response.data.userId,
+                    org: response.data.org,
                     email: response.data.email
                 }
             ));
-
+            history.push(U.events);
         }).catch((error) => {
             setError(error.response ?
                 error.response.data['non_field_errors'][0] : language.errorOccurred
@@ -35,6 +40,12 @@ export default function LogInView() {
         });
         setLoading(false);
     }
+
+    React.useEffect(() => {
+        return () => {
+            setLoading(false);
+        }
+    }, [])
 
     return <LogIn
         loading={loading}

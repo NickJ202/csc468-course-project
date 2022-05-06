@@ -79,12 +79,12 @@ export const Name = styled.p`
   width: 40%;
   color: ${(props) => props.theme.colors.nav.label};
   font-weight: ${(props) => props.theme.typography.boldFontWeight};
-  font-size: 20px;
+  font-size: ${(props) => props.theme.typography.size.h2};
   position: absolute;
   top: 50%;
-  left: 52.5%;
+  left: 57.5%;
   transform: translate(-50%, -50%);
-  padding-bottom: 5px;
+  padding-bottom: 2.5px;
 `;
 
 export const NavigationLink = styled.a<IStyleProps>`

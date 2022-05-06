@@ -1,4 +1,5 @@
 export const STYLING = {
+  borderRadius: "0px",
   buttonHeight: "30px",
   buttonWidth: "150px",
   cutoffInitial: "1024px",
