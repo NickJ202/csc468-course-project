@@ -7,4 +7,4 @@
   2. SSH into head node
   3. Run ```bash /local/repository/cloud/launch_network.sh```
 
-After network launch, frontend will be running at **InternalIP:30500**
+After network launch, the frontend will be running at **InternalIP:30500**
