@@ -11,7 +11,8 @@ import { EventsCreateConfirmation } from "./views/events/create/eventsCreateConf
 import { language } from "./language";
 import * as U from "./urls";
 
-const API_URI = process.env.REACT_APP_API_URI;
+// const API_URI = process.env.REACT_APP_API_URI;
+const API_URI = "http://api:8000/";
 
 export const ORG_ENDPOINT = API_URI + "orgs/";
 export const EVENTS_ENDPOINT = API_URI + "events/"
